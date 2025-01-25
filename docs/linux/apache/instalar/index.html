@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+        href="/img/favicon.svg" rel="icon" type="image/x-icon">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Apache !!!</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="/img/favicon.svg" alt="" width="30" height="24">
+    </a>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        linux
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/linux/apache/">Apache</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <div class="container">
+            <main class="mt-5">
+                <h1>Instalacion de Apache</h1>
+<p>El servidor HTTP Apache es un servidor web HTTP de código abierto.</p>
+<h2>Descripción 📝</h2>
+<p>El servidor Apache es desarrollado y mantenido por una comunidad de usuarios bajo la supervisión de la Apache Software Foundation dentro del proyecto HTTP Server (httpd)..</p>
+<h2>Empezando 🚀</h2>
+<p>Estas instrucciones estan garantizadas para Sistemas Operativos basados en REHEL como Rocky Linux, Almalinux y Centos.</p>
+<h2>Prerrequisitos 📋</h2>
+<p>Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:</p>
+<ul>
+<li>Sistema Operativo (Rocky Linux, Almalinux o Centos)</li>
+<li>Conexion a Internet.</li>
+<li>Sistema actualizado.</li>
+<li>Permisos de sudo.</li>
+</ul>
+<h2>Instalación 🔧</h2>
+<p>1- Para instalar la ultima version de apache usamos:</p>
+<pre><code>dnf install -y httpd
+</code></pre>
+<h2>Version 📦</h2>
+<p><strong>Verion de Apache</strong></p>
+<p>1- Para ver la version del apache:</p>
+<pre><code class="language-bash">httpd -v
+</code></pre>
+<h2>Comandos basicos ⚙️</h2>
+<p>1- Status de Servicio:</p>
+<pre><code class="language-bash">systemctl status httpd
+</code></pre>
+<p>2- Iniciar Servicio:</p>
+<pre><code class="language-bash">systemctl start httpd
+</code></pre>
+<p>3- Activar inicio automatico del Servicio:</p>
+<pre><code class="language-bash">systemctl enable httpd
+</code></pre>
+<p>4- Detener Servicio::</p>
+<pre><code class="language-bash">systemctl stop httpd
+</code></pre>
+<p>5- Reiniciar Servicio::</p>
+<pre><code class="language-bash">systemctl restart httpd
+</code></pre>
+<p>6- Desactivar inicio automatico del Servicio:</p>
+<pre><code class="language-bash">systemctl disable httpd
+</code></pre>
+<h2>Autores ✒️</h2>
+<ul>
+<li><strong>byc0d3</strong></li>
+</ul>
+<p>Para más información visita la página oficial de <a href="https://httpd.apache.org/">Apache</a>.</p>
+
+            </main>
+        </div>
+        <script src="/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "byc0d3.github.io",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "scripts": {
+    "install": "npm install @11ty/eleventy --save-dev",
+    "start": "npx @11ty/eleventy --serve --port=8888",
+    "clean": "rm -rf docs",
+    "deploy": "npx @11ty/eleventy --pathprefix=/",
+    "deploy-subdomain": "npx @11ty/eleventy --pathprefix=/code-pages/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byc0d3/byc0d3.github.io.git"
+  },
+  "keywords": [],
+  "author": "byc0d3",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
