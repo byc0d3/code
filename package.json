@@ -7,7 +7,7 @@
     "start": "npx @11ty/eleventy --serve --port=8888",
     "clean": "rm -rf docs",
     "deploy": "npx @11ty/eleventy --pathprefix=/",
-    "deploy-subdomain": "npx @11ty/eleventy --pathprefix=/code-pages/"
+    "deploy-subdomain": "npx @11ty/eleventy --pathprefix=/code/"
   },
   "repository": {
     "type": "git",
