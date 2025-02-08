@@ -16,9 +16,9 @@ function addCopyButtons() {
 			const code = block.querySelector("code").textContent.trim(); // Usamos textContent y trim()
 			navigator.clipboard.writeText(code).then(() => {
 				button.innerHTML = "✅"; // Cambiar el ícono a un check
-				setTimeout(() => {
-					button.innerHTML = "📋"; // Restaurar el ícono después de 2 segundos
-				}, 2000);
+				//setTimeout(() => {
+				//	button.innerHTML = "📋"; // Restaurar el ícono después de 2 segundos
+				//}, 5000);
 			});
 		});
 	});

@@ -1,0 +1,94 @@
+---
+layout: pages.njk
+title: VirtualHost !!!
+---
+
+<!-- Page Content-->
+<section class="py-5">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<h1 class="fw-bolder">Virtual Host</h1>
+			<p class="lead fw-normal text-muted mb-0">Un virtualhost en Apache es una configuración que permite que un único servidor Apache aloje múltiples sitios web.</p>
+		</div>
+	</div>
+</section>
+
+<section class="">
+	<div class="container">
+		<div class="row mb-3">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active" id="RHEL-tab" data-bs-toggle="tab" data-bs-target="#RHEL" type="button" role="tab" aria-controls="nav-RHEL" aria-selected="true">RHEL</button>
+					<button class="nav-link" id="nav-debian-tab" data-bs-toggle="tab" data-bs-target="#nav-debian" type="button" role="tab" aria-controls="nav-debian" aria-selected="false">Debian</button>
+				</div>
+			</nav>
+			<div class="tab-content mt-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="RHEL" role="tabpanel" aria-labelledby="RHEL-tab">
+					<h1 class="display-6">Empezando 🚀</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
+					<p>1️⃣ - Para crear un VirtuaHost primero creamo un archivo en la siguiente ruta <mark>/etc/httpd/conf.d/</mark>, por lo general se usa el nombre del dominio:</p>
+					<pre class=""><code class="language-bash">sudo nano /etc/httpd/conf.d/dominio.local.conf</code></pre>
+					<h1 class="display-6 mt-5">HTTP ⚙️</h1>
+					<p>2️⃣ - Ejemplo de virtualhost para http:</p>
+					<pre class="">
+						<code class="language-apacheconf">
+						&lt;VirtualHost *:80&gt;
+							DocumentRoot "/var/www/sitio"
+							ServerName sitio.local
+							ServerAlias *.sitio.local
+
+							ErrorLog /var/log/httpd/sitio.local-error_log
+							CustomLog /var/log/httpd/sitio.local-access_log combined
+
+						&lt;Directory "/var/www/sitio"&gt;
+								AllowOverride All
+								Require all granted
+						&lt;/Directory&gt;
+
+							# Redirigir todo el tráfico HTTP a HTTPS
+							RewriteEngine On
+							RewriteCond %{HTTPS} off
+							RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+						&lt;/VirtualHost&gt;
+						</code>
+					</pre>
+					<p>3️⃣ - Reinicio del servicio para que tome los cambios::</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart httpd</code></pre>
+					<h1 class="display-6 mt-5">HTTPS ⚙️</h1>
+					<p>4️⃣ - Ejemplo de virtualhost para https:</p>
+					<pre class="">
+						<code class="language-apacheconf">
+						&lt;VirtualHost *:443&gt;
+							DocumentRoot "/var/www/sitio"
+							ServerName sitio.local
+							ServerAlias *.sitio.local
+
+							ErrorLog /var/log/httpd/sitio.local-ssl_error_log
+							CustomLog /var/log/httpd/sitio.local-ssl_access_log combine
+
+							SSLEngine on
+							SSLCertificateFile /etc/pki/tls/certs/wildcard.local.crt
+							SSLCertificateKeyFile /etc/pki/tls/private/wildcard.local.key
+
+						&lt;Directory "/var/www/sitio"&gt;
+								AllowOverride All
+								Require all granted
+						&lt;/Directory&gt;
+						&lt;/VirtualHost&gt;
+						</code>
+					</pre>
+					<p>5️⃣ - Reinicio del servicio para que tome los cambios::</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart httpd</code></pre>
+
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-debian" role="tabpanel" aria-labelledby="nav-debian-tab">
+					<h1 class="display-6">Empezando 🚀</h1>
+					<p class="h5 mb-5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
