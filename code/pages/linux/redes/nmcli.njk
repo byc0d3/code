@@ -1,0 +1,122 @@
+---
+layout: pages.njk
+title: Server !!!
+---
+
+<!-- Page Content-->
+<section class="py-5">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<h1 class="fw-bolder">Nmcli</h1>
+			<p class="lead fw-normal text-muted mb-0">nmcli (NetworkManager Command Line Interface) es una potente utilidad de línea de comandos para gestionar conexiones de red en Linux.</p>
+		</div>
+	</div>
+</section>
+
+<section class="">
+	<div class="container">
+		<div class="row mb-3">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active text-dark" id="crearRed-tab" data-bs-toggle="tab" data-bs-target="#crearRed" type="button" role="tab" aria-controls="nav-crearRed" aria-selected="true">Nmcli</button>
+					<button class="nav-link text-dark" id="nav-SELinux-tab" data-bs-toggle="tab" data-bs-target="#nav-SELinux" type="button" role="tab" aria-controls="nav-SELinux" aria-selected="false">SELinux</button>
+					<button class="nav-link text-dark" id="nav-timeZone-tab" data-bs-toggle="tab" data-bs-target="#nav-timeZone" type="button" role="tab" aria-controls="nav-timeZone" aria-selected="false">Time-Zone</button>
+					<button class="nav-link text-dark" id="nav-banner-tab" data-bs-toggle="tab" data-bs-target="#nav-banner" type="button" role="tab" aria-controls="nav-banner" aria-selected="false">Banner</button>
+				</div>
+			</nav>
+			<div class="tab-content mt-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="crearRed" role="tabpanel" aria-labelledby="crearRed-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">La configuración específica de las redes en un servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
+					<h1 class="display-6 mt-5">Información de las interfaces de red 🔧</h1>
+					<p>1️⃣ - Primero listaremos todas las interfaces de red en nuestro sistema:</p>
+					<pre class=""><code class="language-bash">sudo nmcli device show</code></pre>
+					<p>2️⃣ - Si queremos ver información mas detallada de las interfaces:</p>
+					<pre class=""><code class="language-bash">sudo nmcli -p device show</code></pre>
+					<p>3️⃣ - Para conocer cuales interfaces de red estan activas:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con show</code></pre>
+					<h1 class="display-6 mt-5">Crear redes 🔧</h1>
+					<p>4️⃣ - Crear una nueva conexión de red con DHCP:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensxxx type ethernet ifname ensxxx ipv4.method auto</code></pre>
+					<p>5️⃣ - Crear una nueva conexión de red con dirección estatica:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensxxx type ethernet ifname ensxxx ipv4.method manual ipv4.address 192.168.1.102/24 ipv4.gateway 192.168.1.1</code></pre>
+					<p>6️⃣ - Para activar esta interfaz:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con up ensxxx</code></pre>
+					<p>7️⃣ - Añadir un servidor DNS a una conexión existente:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con mod "ensxxx" ipv4.dns 8.8.8.8,8.8.4.4</code></pre>
+					<p>8️⃣ - Desactivar la dirección IPv6 con nmcli:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con mod "ens35" ipv6.method ignore</code></pre>
+					<p>9️⃣ - Modificar una conexion existente:</p>
+					<pre class=""><code class="language-bash">sudo nmcli connection modify ensxxx ipv4.addresses 192.168.1.103/24</code></pre>
+					<p>9️⃣.1️⃣ - Activar esta interfaz:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con up ensxxx</code></pre>
+					<p>9️⃣ - Agregar una ip a una interfaz, con IPv6 desactivado sin gateway:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensXXX type ethernet ifname ensXXX ipv4.method manual ipv4.address 10.31.196.XXX/25 ipv6.method disabled</code></pre>
+					<p>🔟 - para eliminar una conexion existente:</p>
+					<pre class=""><code class="language-bash">sudo nmcli con delete ensxxx</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>
+						La documentación oficial de apache se encuentra en:
+						<a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
+					</p>
+				</div>
+				<div class="tab-pane fade" id="nav-SELinux" role="tabpanel" aria-labelledby="nav-debian-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">SELinux (Security-Enhanced Linux) es un módulo de seguridad para el kernel de Linux que proporciona una capa adicional de seguridad sobre el sistema tradicional de control de acceso discrecional (DAC).</p>
+					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
+					<p>1️⃣ - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
+					<pre class=""><code class="language-bash">sudo nano /etc/sysconfig/selinux</code></pre>
+					<p>2️⃣ - Modificamos la siguente linea:</p>
+					<pre class=""><code class="language-bash">SELINUX=permissive</code></pre>
+					<p>3️⃣ - Reiniciamos el sistema:</p>
+					<pre class=""><code class="language-bash">sudo reboot</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>
+						La documentación oficial de apache se encuentra en:
+						<a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
+					</p>
+				</div>
+				<div class="tab-pane fade" id="nav-timeZone" role="tabpanel" aria-labelledby="nav-timeZone-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">La zona horaria es una región de la Tierra que tiene la misma hora estándar para fines legales, comerciales y sociales. Es una forma de estandarizar la medición del tiempo en diferentes ubicaciones geográficas, a medida que la Tierra gira y la posición del sol cambia.</p>
+					<h1 class="display-6 mt-5">Configurar Zona Horaria 🔧</h1>
+					<p>1️⃣ - Para cambiar la hora y la zona horaria ejecutamos el siguiente comando, modificando segun sea el Pais/Estado:</p>
+					<pre class=""><code class="language-bash">sudo timedatectl set-timezone America/Caracas</code></pre>
+					<p>2️⃣ - Si desea ennumerar todas las zonas horarias disponibles ejecutamos lo siguiente:</p>
+					<pre class=""><code class="language-bash">sudo timedatectl list-timezones</code></pre>
+					<p>3️⃣ - Para sincronizar el tiempo, y habilitarlo ejecutamos::</p>
+					<pre class=""><code class="language-bash">sudo systemctl start chronyd && systemctl enable chronyd && systemctl status chronyd</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+				</div>
+				<div class="tab-pane fade" id="nav-banner" role="tabpanel" aria-labelledby="nav-banner-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Un banner al iniciar sesión por SSH en tu servidor es una excelente manera de mostrar información importante, como avisos legales, políticas de uso o simplemente un mensaje de bienvenida personalizado.</p>
+					<h1 class="display-6 mt-5">Configurar Banner 🔧</h1>
+					<p>1️⃣ - Para crear un banner que sea visible al conectarnos por ssh, editamos el siguiente archivo:</p>
+					<pre class=""><code class="language-bash">sudo nano /etc/motd</code></pre>
+					<p>2️⃣ - Agregamos cualquier dieño, es este caso dejo esta plantilla:</p>
+					<pre class=""><code class="language-bash">
+                        |----------------------------------------------------------------|
+                        | """                     SERVER-APP01-PRO                    "" |
+                        | -------------------------------------------------------------- |
+                        | -------------------------------------------------------------- |
+                        | """ Si no tiene autorizacion para ingresar a este servidor """ |
+                        | """ salga de inmediato, el mismo esta siento monitoriado   """ |
+                        | """ se aplicaran severas sanciones por uso no autorizado.  """ |
+                        | -------------------------------------------------------------- |
+                        | -------------------------------------------------------------- |
+                        | """    SEDE -  Direccion - Infraestructura - Servidores    """ |
+                        | -------------------------------------------------------------- |</code></pre>
+					<p>3️⃣ - Guardamos y salimos, al conectarnos nuevamente a servidor se vera el banner en la consola</p>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
