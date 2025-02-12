@@ -1,0 +1,106 @@
+---
+layout: pages.njk
+title: MariaDB !!!
+---
+
+<!-- Page Content-->
+<section class="py-5">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<h1 class="fw-bolder">MariaDB</h1>
+			<p class="lead fw-normal text-muted mb-0">MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL (General Public License).</p>
+		</div>
+	</div>
+</section>
+
+<section class="">
+	<div class="container">
+		<div class="row mb-3">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
+					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Configuraciones</button>
+					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Querys</button>
+				</div>
+			</nav>
+			<div class="tab-content mt-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Instalación 🔧</h1>
+					<p>1 - Descargamos la ultima versión de mariadb:</p>
+					<pre class=""><code class="language-bash">curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash</code></pre>
+					<p>1 - Instalamos MariaDB:</p>
+					<pre class=""><code class="language-bash">sudo dnf install mariadb-server</code></pre>
+					<h1 class="display-6 mt-5">Versión 📦</h1>
+					<p>2 - Para ver la version de MariaDB:</p>
+					<pre class=""><code class="language-bash">sudo mariadb -V</code></pre>
+					<h1 class="display-6 mt-5">Comandos basicos ⚙️</h1>
+					<p>3 - Activar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
+					<p>4 - Iniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl start mariadb</code></pre>
+					<p>5- Status de Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl status mariadb</code></pre>
+					<p>6 - Reiniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart mariadb</code></pre>
+					<p>7 - Detener Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop mariadb</code></pre>
+					<p>8 - Desactivar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl disable mariadb</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
+					<p>1 - Luego de instalado y iniciado el servicio de MariaDB configuramos unas politicas de seguridad:</p>
+					<pre class=""><code class="language-bash">sudo mariadb-secure-installation</code></pre>
+					<p>2 - Seguimos los pasos y respondemos segun nuestras necesidades:</p>
+					<p>3 - Reinicio del servicio para que tome los cambios::</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart mariadb</code></pre>
+					<p>4 - Para conectarnos localmente desde el servidor:</p>
+					<pre class=""><code class="language-bash">sudo mariadb -u root -p</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
+					<p>1 - Nos conectamos la base de datos:</p>
+					<pre class=""><code class="language-bash">sudo mariadb -u root -p</code></pre>
+					<p>2 - Crear base de datos con utf8_general:</p>
+					<pre class=""><code class="language-sql">CREATE DATABASE database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+					<p>3 - Creamos un usuario:</p>
+					<pre class=""><code class="language-sql">CREATE USER 'user'@'%' IDENTIFIED BY 'passwd';</code></pre>
+					<p>4 - Le damos permisos a ese usuario sobre esa base de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON database.* TO 'user'@'%';</code></pre>
+					<p>5 - Para el usuario Administrador que tendra permiso some todas las bases de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
+					<p>6 - Permiso a usuario solo de CRUD sobre esa base de datos:</p>
+					<pre class=""><code class="language-sql">GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON database.* TO 'user'@'%';</code></pre>
+					<p>5 - Para el usuario Administrador que tendra permiso some todas las bases de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
+					<p>7 - Recarga los privilegios:</p>
+					<pre class=""><code class="language-sql">FLUSH PRIVILEGES;</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-configuraciones" role="tabpanel" aria-labelledby="nav-configuraciones-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

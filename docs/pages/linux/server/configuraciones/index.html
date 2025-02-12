@@ -71,20 +71,20 @@
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">La configuración específica del servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
 					<h1 class="display-6 mt-5">Repositorios y paquetes escenciales 🔧</h1>
-					<p>1️⃣ - Actualizamos el S.O y sus paquetes:</p>
+					<p>1 - Actualizamos el S.O y sus paquetes:</p>
 					<pre class=""><code class="language-bash">sudo dnf update && dnf upgrade</code></pre>
-					<p>2️⃣ - Agregamos el repositorio EPEL:</p>
+					<p>2 - Agregamos el repositorio EPEL:</p>
 					<pre class=""><code class="language-bash">sudo dnf install epel-release</code></pre>
-					<p>3️⃣ - Instalamos paquetes escenciales:</p>
+					<p>3 - Instalamos paquetes escenciales:</p>
 					<pre class=""><code class="language-bash">sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git tar rsync util-linux-user nfs-utils bind-utils</code></pre>
 					<h1 class="display-6 mt-5">Activar rpmfusion 🔧</h1>
-					<p>4️⃣ - habilitar el repositorio CRB:</p>
+					<p>4 - habilitar el repositorio CRB:</p>
 					<pre class=""><code class="language-bash">sudo dnf config-manager --set-enabled crb</code></pre>
-					<p>5️⃣ - Importar EPEL y EPEL Next Repository:</p>
+					<p>5 - Importar EPEL y EPEL Next Repository:</p>
 					<pre class=""><code class="language-bash">sudo dnf install \ https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \ https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm</code></pre>
-					<p>6️⃣ - Instale RPM Fusion Free:</p>
+					<p>6 - Instale RPM Fusion Free:</p>
 					<pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
-					<p>7️⃣ - Instale RPM Fusion No Free:</p>
+					<p>7 - Instale RPM Fusion No Free:</p>
 					<pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
@@ -98,11 +98,11 @@
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">SELinux (Security-Enhanced Linux) es un módulo de seguridad para el kernel de Linux que proporciona una capa adicional de seguridad sobre el sistema tradicional de control de acceso discrecional (DAC).</p>
 					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
-					<p>1️⃣ - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
+					<p>1 - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
 					<pre class=""><code class="language-bash">sudo nano /etc/sysconfig/selinux</code></pre>
-					<p>2️⃣ - Modificamos la siguente linea:</p>
+					<p>2 - Modificamos la siguente linea:</p>
 					<pre class=""><code class="language-bash">SELINUX=permissive</code></pre>
-					<p>3️⃣ - Reiniciamos el sistema:</p>
+					<p>3 - Reiniciamos el sistema:</p>
 					<pre class=""><code class="language-bash">sudo reboot</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
@@ -116,11 +116,11 @@
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">La zona horaria es una región de la Tierra que tiene la misma hora estándar para fines legales, comerciales y sociales. Es una forma de estandarizar la medición del tiempo en diferentes ubicaciones geográficas, a medida que la Tierra gira y la posición del sol cambia.</p>
 					<h1 class="display-6 mt-5">Configurar Zona Horaria 🔧</h1>
-					<p>1️⃣ - Para cambiar la hora y la zona horaria ejecutamos el siguiente comando, modificando segun sea el Pais/Estado:</p>
+					<p>1 - Para cambiar la hora y la zona horaria ejecutamos el siguiente comando, modificando segun sea el Pais/Estado:</p>
 					<pre class=""><code class="language-bash">sudo timedatectl set-timezone America/Caracas</code></pre>
-					<p>2️⃣ - Si desea ennumerar todas las zonas horarias disponibles ejecutamos lo siguiente:</p>
+					<p>2 - Si desea ennumerar todas las zonas horarias disponibles ejecutamos lo siguiente:</p>
 					<pre class=""><code class="language-bash">sudo timedatectl list-timezones</code></pre>
-					<p>3️⃣ - Para sincronizar el tiempo, y habilitarlo ejecutamos::</p>
+					<p>3 - Para sincronizar el tiempo, y habilitarlo ejecutamos::</p>
 					<pre class=""><code class="language-bash">sudo systemctl start chronyd && systemctl enable chronyd && systemctl status chronyd</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
@@ -129,9 +129,9 @@
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">Un banner al iniciar sesión por SSH en tu servidor es una excelente manera de mostrar información importante, como avisos legales, políticas de uso o simplemente un mensaje de bienvenida personalizado.</p>
 					<h1 class="display-6 mt-5">Configurar Banner 🔧</h1>
-					<p>1️⃣ - Para crear un banner que sea visible al conectarnos por ssh, editamos el siguiente archivo:</p>
+					<p>1 - Para crear un banner que sea visible al conectarnos por ssh, editamos el siguiente archivo:</p>
 					<pre class=""><code class="language-bash">sudo nano /etc/motd</code></pre>
-					<p>2️⃣ - Agregamos cualquier dieño, es este caso dejo esta plantilla:</p>
+					<p>2 - Agregamos cualquier dieño, es este caso dejo esta plantilla:</p>
 					<pre class=""><code class="language-bash">
                         |----------------------------------------------------------------|
                         | """                     SERVER-APP01-PRO                    "" |
@@ -144,7 +144,7 @@
                         | -------------------------------------------------------------- |
                         | """    SEDE -  Direccion - Infraestructura - Servidores    """ |
                         | -------------------------------------------------------------- |</code></pre>
-					<p>3️⃣ - Guardamos y salimos, al conectarnos nuevamente a servidor se vera el banner en la consola</p>
+					<p>3 - Guardamos y salimos, al conectarnos nuevamente a servidor se vera el banner en la consola</p>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 				</div>

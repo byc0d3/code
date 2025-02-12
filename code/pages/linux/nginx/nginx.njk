@@ -1,0 +1,132 @@
+---
+layout: pages.njk
+title: Nginx !!!
+---
+
+<!-- Page Content-->
+<section class="py-5">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<h1 class="fw-bolder">Nginx</h1>
+			<p class="lead fw-normal text-muted mb-0">Nginx es un servidor web/Proxy inverso ligero de alto rendimiento y un proxy para protocolos de correo electrónico.</p>
+		</div>
+	</div>
+</section>
+
+<section class="">
+	<div class="container">
+		<div class="row mb-3">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active text-dark" id="rhel-tab" data-bs-toggle="tab" data-bs-target="#rhel" type="button" role="tab" aria-controls="nav-RHEL" aria-selected="true">Instalación</button>
+					<button class="nav-link text-dark" id="nav-virtualHost-tab" data-bs-toggle="tab" data-bs-target="#nav-virtualHost" type="button" role="tab" aria-controls="nav-virtualHost" aria-selected="false">Virtual Host</button>
+					<button class="nav-link text-dark" id="nav-configuraciones-tab" data-bs-toggle="tab" data-bs-target="#nav-configuraciones" type="button" role="tab" aria-controls="nav-configuraciones" aria-selected="false">Configuraciones</button>
+				</div>
+			</nav>
+			<div class="tab-content mt-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="rhel" role="tabpanel" aria-labelledby="rhel-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Instalación 🔧</h1>
+					<p>1 - Para instalar la ultima version de apache usamos:</p>
+					<pre class=""><code class="language-bash">sudo dnf install nginx</code></pre>
+					<h1 class="display-6 mt-5">Versión 📦</h1>
+					<p>2 - Para ver la version del apache:</p>
+					<pre class=""><code class="language-bash">sudo nginx -v</code></pre>
+					<h1 class="display-6 mt-5">Comandos basicos ⚙️</h1>
+					<p>3 - Activar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl enable nginx</code></pre>
+					<p>4 - Iniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl start nginx</code></pre>
+					<p>5- Status de Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl status nginx</code></pre>
+					<p>6 - Reiniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart nginx</code></pre>
+					<p>7 - Detener Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop nginx</code></pre>
+					<p>8 - Desactivar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl disable nginx</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-virtualHost" role="tabpanel" aria-labelledby="nav-debian-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
+					<p>1 - Para crear un VirtuaHost primero creamo un archivo en la siguiente ruta <mark>/etc/nginx/conf.d/</mark>, por lo general se usa el nombre del dominio:</p>
+					<pre class=""><code class="language-bash">sudo nano /etc/nginx/conf.d/dominio.local.conf</code></pre>
+					<h1 class="display-6 mt-5">HTTP ⚙️</h1>
+					<p>2 - Ejemplo de virtualhost para nginx:</p>
+					<pre class="">
+						<code class="language-apacheconf">
+                            server {
+                                listen 80;
+                                server_name ejemplo.com www.ejemplo.com; # Reemplaza con tu dominio
+
+                                # Ubicación de los logs
+                                access_log /var/log/nginx/ejemplo.com.access.log;
+                                error_log  /var/log/nginx/ejemplo.com.error.log error; # El nivel "error" captura errores, warnings y criticos.  Puedes cambiarlo a "info" para más detalle (poco recomendable en producción).
+
+                                # Raíz del sitio web
+                                root /var/www/ejemplo.com;
+                                index index.html index.htm index.php;
+
+                                location / {
+                                    try_files $uri $uri/ =404;
+                                }
+
+                                # Denegar acceso a archivos .htaccess (importante por seguridad)
+                                location ~ /\.ht {
+                                    deny all;
+                                }
+
+                                # Denegar acceso a archivos sensibles (opcional, pero recomendable)
+                                location ~ /\.(git|svn|hg) {
+                                    deny all;
+                                }
+
+                                # Manejo de archivos estáticos (CSS, JavaScript, imágenes, etc.)
+                                location ~* \.(jpg|jpeg|png|gif|ico|css|js)$ {
+                                    expires 365d; # Cachear por un año
+                                    log_not_found off; # No registrar errores "file not found" para estos archivos.  Útil si se manejan con un sistema de assets.
+                                }
+
+                                # Manejo de archivos SVG
+                                location ~* \.svg$ {
+                                  expires 365d;
+                                  add_header Content-Type image/svg+xml;
+                                  log_not_found off;
+                                }
+
+                                # Opcional: Redirección de HTTP a HTTPS (si tienes certificado SSL)
+                                # listen 443 ssl;
+                                # ssl_certificate /etc/ssl/certs/ejemplo.com.crt;
+                                # ssl_certificate_key /etc/ssl/private/ejemplo.com.key;
+
+                                # location / {
+                                #    return 301 https://$host$request_uri;
+                                # }
+                            }
+						</code>
+					</pre>
+					<p>3 - Para verificar y validar posibles errores en la configuración:</p>
+					<pre class=""><code class="language-bash">sudo snginx -t</code></pre>
+					<p>4 - Reinicio del servicio para que tome los cambios:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart nginx</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-configuraciones" role="tabpanel" aria-labelledby="nav-configuraciones-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

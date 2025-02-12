@@ -27,30 +27,30 @@ title: Redes !!!
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
 					<p class="h5">La configuración específica de las redes en un servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
 					<h1 class="display-6 mt-5">Información de las interfaces de red 🔧</h1>
-					<p>1️⃣ - Primero listaremos todas las interfaces de red en nuestro sistema:</p>
+					<p>1 - Primero listaremos todas las interfaces de red en nuestro sistema:</p>
 					<pre class=""><code class="language-bash">sudo nmcli device show</code></pre>
-					<p>2️⃣ - Si queremos ver información mas detallada de las interfaces:</p>
+					<p>2 - Si queremos ver información mas detallada de las interfaces:</p>
 					<pre class=""><code class="language-bash">sudo nmcli -p device show</code></pre>
-					<p>3️⃣ - Para conocer cuales interfaces de red estan activas:</p>
+					<p>3 - Para conocer cuales interfaces de red estan activas:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con show</code></pre>
 					<h1 class="display-6 mt-5">Crear redes 🔧</h1>
-					<p>4️⃣ - Crear una nueva conexión de red con DHCP:</p>
+					<p>4 - Crear una nueva conexión de red con DHCP:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensxxx type ethernet ifname ensxxx ipv4.method auto</code></pre>
-					<p>5️⃣ - Crear una nueva conexión de red con dirección estatica:</p>
+					<p>5 - Crear una nueva conexión de red con dirección estatica:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensxxx type ethernet ifname ensxxx ipv4.method manual ipv4.address 192.168.1.102/24 ipv4.gateway 192.168.1.1</code></pre>
-					<p>6️⃣ - Para activar esta interfaz:</p>
+					<p>6 - Para activar esta interfaz:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con up ensxxx</code></pre>
-					<p>7️⃣ - Añadir un servidor DNS a una conexión existente:</p>
+					<p>7 - Añadir un servidor DNS a una conexión existente:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con mod "ensxxx" ipv4.dns 8.8.8.8,8.8.4.4</code></pre>
-					<p>8️⃣ - Desactivar la dirección IPv6 con nmcli:</p>
+					<p>8 - Desactivar la dirección IPv6 con nmcli:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con mod "ens35" ipv6.method ignore</code></pre>
-					<p>9️⃣ - Modificar una conexion existente:</p>
+					<p>9 - Modificar una conexion existente:</p>
 					<pre class=""><code class="language-bash">sudo nmcli connection modify ensxxx ipv4.addresses 192.168.1.103/24</code></pre>
-					<p>9️⃣.1️⃣ - Activar esta interfaz:</p>
+					<p>9.1 - Activar esta interfaz:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con up ensxxx</code></pre>
-					<p>9️⃣ - Agregar una ip a una interfaz, con IPv6 desactivado sin gateway:</p>
+					<p>10 - Agregar una ip a una interfaz, con IPv6 desactivado sin gateway:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensXXX type ethernet ifname ensXXX ipv4.method manual ipv4.address 10.31.196.XXX/25 ipv6.method disabled</code></pre>
-					<p>🔟 - para eliminar una conexion existente:</p>
+					<p>11 - para eliminar una conexion existente:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con delete ensxxx</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
@@ -64,12 +64,12 @@ title: Redes !!!
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Nmcli Routing</h1>
 					<p class="h5">El routing con nmcli implica la configuración de rutas de red en un sistema Linux para definir cómo se debe enrutar el tráfico de red.</p>
 					<h1 class="display-6 mt-5">Configuración de segunda interfaz de red 🔧</h1>
-					<p>1️⃣ - Antes de proseguir es recomendable eliminar la interfaz creada de manera automática por el sistema:</p>
-					<p>2️⃣ - Crearemos una interfaz de red, sin gateway y con IPv6 deshabilitado:</p>
+					<p>1 - Antes de proseguir es recomendable eliminar la interfaz creada de manera automática por el sistema:</p>
+					<p>1.1 - Crearemos una interfaz de red, sin gateway y con IPv6 deshabilitado:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con add con-name ensXXX type ethernet ifname ensXXX ipv4.method manual ipv4.address 10.31.196.XX/25 ipv6.method disabled</code></pre>
-					<p>3️⃣ - Activar esta interfaz:</p>
+					<p>2 - Activar esta interfaz:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con up ensxxx</code></pre>
-					<p>4️⃣ - Crearemos una tabla de enrutamiento estatica donde definiremos tambien el gateway por el cuar se manejara el trafico de esta interfaz:</p>
+					<p>3 - Crearemos una tabla de enrutamiento estatica donde definiremos tambien el gateway por el cuar se manejara el trafico de esta interfaz:</p>
 					<pre class=""><code class="language-bash">
                         GW=10.31.196.XXX
                         DEVICE=ensXXX
@@ -84,7 +84,7 @@ title: Redes !!!
                         nmcli con up ${DEVICE}
                         nmcli con show ${DEVICE}
                     </code></pre>
-					<p>5️⃣ - Para ver la información de esta interfaz usamos el comando nmcli show:</p>
+					<p>4 - Para ver la información de esta interfaz usamos el comando nmcli show:</p>
 					<pre class=""><code class="language-bash">sudo nnmcli con show ensXXX</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
