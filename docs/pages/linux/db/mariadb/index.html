@@ -61,8 +61,9 @@
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
-					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Configuraciones</button>
-					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Querys</button>
+					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Querys</button>
+					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Configuraciones</button>
+					<button class="nav-link text-dark" id="nav-tab4-tab" data-bs-toggle="tab" data-bs-target="#nav-tab4" type="button" role="tab" aria-controls="nav-tab4" aria-selected="false">Extras</button>
 				</div>
 			</nav>
 			<div class="tab-content mt-3" id="nav-tabContent">
@@ -77,7 +78,7 @@
 					<h1 class="display-6 mt-5">Versión 📦</h1>
 					<p>2 - Para ver la version de MariaDB:</p>
 					<pre class=""><code class="language-bash">sudo mariadb -V</code></pre>
-					<h1 class="display-6 mt-5">Comandos basicos ⚙️</h1>
+					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
 					<p>3 - Activar inicio automatico del Servicio:</p>
 					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
 					<p>4 - Iniciar Servicio:</p>
@@ -90,6 +91,11 @@
 					<pre class=""><code class="language-bash">sudo systemctl stop mariadb</code></pre>
 					<p>8 - Desactivar inicio automatico del Servicio:</p>
 					<pre class=""><code class="language-bash">sudo systemctl disable mariadb</code></pre>
+					<h1 class="display-6 mt-5">Establecer configuraciones básicas de seguridad ⚙️</h1>
+					<p>1 - Luego de instalado y iniciado el servicio de MariaDB configuramos unas politicas de seguridad:</p>
+					<pre class=""><code class="language-bash">sudo mariadb-secure-installation</code></pre>
+					<p>2 - Seguimos los pasos y respondemos segun nuestras necesidades:</p>
+					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
@@ -98,14 +104,25 @@
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
-					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
-					<p>1 - Luego de instalado y iniciado el servicio de MariaDB configuramos unas politicas de seguridad:</p>
-					<pre class=""><code class="language-bash">sudo mariadb-secure-installation</code></pre>
-					<p>2 - Seguimos los pasos y respondemos segun nuestras necesidades:</p>
-					<p>3 - Reinicio del servicio para que tome los cambios::</p>
-					<pre class=""><code class="language-bash">sudo systemctl restart mariadb</code></pre>
-					<p>4 - Para conectarnos localmente desde el servidor:</p>
-					<pre class=""><code class="language-bash">sudo mariadb -u root -p</code></pre>
+					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
+					<p>1 - Para conectarnos a la base de datos localmente:</p>
+					<pre class=""><code class="language-bash">mariadb -u root -p</code></pre>
+					<p>2 - Para conectarnos la base de datos remotamente:</p>
+					<pre class=""><code class="language-bash">mariadb -h host -u user -p</code></pre>
+					<p>3 - Crear base de datos con utf8_general:</p>
+					<pre class=""><code class="language-sql">CREATE DATABASE database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+					<p>4 - Creamos un usuario:</p>
+					<pre class=""><code class="language-sql">CREATE USER 'user'@'%' IDENTIFIED BY 'passwd';</code></pre>
+					<p>5 - Le damos permisos a ese usuario sobre esa base de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON database.* TO 'user'@'%';</code></pre>
+					<p>6 - Para que un usuario Administrador tenga permisos sobre todas las bases de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
+					<p>7 - Permiso a usuario solo de CRUD sobre esa base de datos:</p>
+					<pre class=""><code class="language-sql">GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON database.* TO 'user'@'%';</code></pre>
+					<p>8 - Para el usuario Administrador que tendra permiso some todas las bases de datos:</p>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
+					<p>9 - Recarga los privilegios:</p>
+					<pre class=""><code class="language-sql">FLUSH PRIVILEGES;</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
@@ -114,23 +131,20 @@
 				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
-					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
-					<p>1 - Nos conectamos la base de datos:</p>
-					<pre class=""><code class="language-bash">sudo mariadb -u root -p</code></pre>
-					<p>2 - Crear base de datos con utf8_general:</p>
-					<pre class=""><code class="language-sql">CREATE DATABASE database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
-					<p>3 - Creamos un usuario:</p>
-					<pre class=""><code class="language-sql">CREATE USER 'user'@'%' IDENTIFIED BY 'passwd';</code></pre>
-					<p>4 - Le damos permisos a ese usuario sobre esa base de datos:</p>
-					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON database.* TO 'user'@'%';</code></pre>
-					<p>5 - Para el usuario Administrador que tendra permiso some todas las bases de datos:</p>
-					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
-					<p>6 - Permiso a usuario solo de CRUD sobre esa base de datos:</p>
-					<pre class=""><code class="language-sql">GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON database.* TO 'user'@'%';</code></pre>
-					<p>5 - Para el usuario Administrador que tendra permiso some todas las bases de datos:</p>
-					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
-					<p>7 - Recarga los privilegios:</p>
-					<pre class=""><code class="language-sql">FLUSH PRIVILEGES;</code></pre>
+					<h1 class="display-6 mt-5">Configuraciónes 🔧</h1>
+					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab">
+					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> Extras</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
+					<h1 class="display-6 mt-5">Extras 🔧</h1>
+					<p>1 - Para crear un usuario para backups:</p>
+					<pre class=""><code class="language-sql">CREATE USER 'backup'@'localhost' IDENTIFIED BY 'passwd';</code></pre>
+					<p>2 - Le damos pribilegios de select:</p>
+					<pre class=""><code class="language-sql">GRANT SELECT, LOCK TABLES, SHOW DATABASES ON *.* TO 'backup'@'localhost';</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>

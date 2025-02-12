@@ -18,13 +18,13 @@ title: Apache !!!
 		<div class="row mb-3">
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
-					<button class="nav-link active text-dark" id="rhel-tab" data-bs-toggle="tab" data-bs-target="#rhel" type="button" role="tab" aria-controls="nav-RHEL" aria-selected="true">Instalación</button>
-					<button class="nav-link text-dark" id="nav-virtualHost-tab" data-bs-toggle="tab" data-bs-target="#nav-virtualHost" type="button" role="tab" aria-controls="nav-virtualHost" aria-selected="false">Virtual Host</button>
-					<button class="nav-link text-dark" id="nav-configuraciones-tab" data-bs-toggle="tab" data-bs-target="#nav-configuraciones" type="button" role="tab" aria-controls="nav-configuraciones" aria-selected="false">Configuraciones</button>
+					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
+					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Virtual Host</button>
+					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Configuraciones</button>
 				</div>
 			</nav>
 			<div class="tab-content mt-3" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="rhel" role="tabpanel" aria-labelledby="rhel-tab">
+				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Instalación 🔧</h1>
@@ -33,7 +33,7 @@ title: Apache !!!
 					<h1 class="display-6 mt-5">Versión 📦</h1>
 					<p>2 - Para ver la version del apache:</p>
 					<pre class=""><code class="language-bash">sudo httpd -v</code></pre>
-					<h1 class="display-6 mt-5">Comandos basicos ⚙️</h1>
+					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
 					<p>3 - Activar inicio automatico del Servicio:</p>
 					<pre class=""><code class="language-bash">sudo systemctl enable httpd</code></pre>
 					<p>4 - Iniciar Servicio:</p>
@@ -51,7 +51,7 @@ title: Apache !!!
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
 				</div>
-				<div class="tab-pane fade" id="nav-virtualHost" role="tabpanel" aria-labelledby="nav-debian-tab">
+				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
@@ -113,7 +113,7 @@ title: Apache !!!
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
 				</div>
-				<div class="tab-pane fade" id="nav-configuraciones" role="tabpanel" aria-labelledby="nav-configuraciones-tab">
+				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
