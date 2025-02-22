@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="/img/favicon.svg" rel="icon" type="image/x-icon" />
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.css" />
+		<!-- Bootstrap icons-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+		<!-- prism css-->
+		<link rel="stylesheet" href="/css/prism.css" />
+		<!-- Styles -->
+		<link rel="stylesheet" href="/css/styles.css" />
+		<title>C0d3 | Firewalld !!!</title>
+	</head>
+	<body class="d-flex flex-column">
+		<main class="flex-shrink-0">
+			<!-- Navigation-->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+	<div class="container px-5">
+		<a class="navbar-brand" href="#">
+			<img src="/img/favicon.svg" alt="Bootstrap" width="30" height="24" />
+		</a>
+		<a class="navbar-brand" href="/index.html">C0d3s</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="/about">Acerca</a></li>
+				<li class="nav-item"><a class="nav-link" href="/contact">Contactos</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+						<li><a class="dropdown-item" href="/blog">Blog</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/codes">Codigos</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+			
+<!-- Page Content-->
+<section class="py-5">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<h1 class="fw-bolder">Firewalld</h1>
+			<p class="lead fw-normal text-muted mb-0">FirewallD es un controlador frontend para la tabla iptables que se usa para implementar reglas de tráfico de red persistentes.</p>
+		</div>
+	</div>
+</section>
+
+<section class="">
+	<div class="container">
+		<div class="row mb-3">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
+					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Reglas</button>
+					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Desintalar</button>
+				</div>
+			</nav>
+			<div class="tab-content mt-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<p class="h5">La configuración específica de las redes en un servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
+					<h1 class="display-6 mt-5">Instalar y gestionar FirewallD 🔧</h1>
+					<p>1 - Primero verificamos que no este instalado en el sistema:</p>
+					<pre class=""><code class="language-bash">sudo systemctl status firewalld</code></pre>
+					<p>2 - En aso que no se encuentre procedemos a instalar:</p>
+					<pre class=""><code class="language-bash">sudo dnf install firewalld -y</code></pre>
+					<p>3 - Activamos el servivio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl enable firewalld</code></pre>
+					<p>4 - Iniciamos el servivio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl start firewalld</code></pre>
+					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
+					<p>5 - Activar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl enable firewalld</code></pre>
+					<p>6 - Iniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl start firewalld</code></pre>
+					<p>7- Status de Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl status firewalld</code></pre>
+					<p>8 - Reiniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart firewalld</code></pre>
+					<p>9 - Detener Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop firewalld</code></pre>
+					<p>10 - Desactivar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl disable firewalld</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>
+						La documentación oficial de nmcli se encuentra en:
+						<a href="https://networkmanager.dev/docs/api/latest/nmcli.html" class="">Nmcli</a>
+					</p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Configuración básica</h1>
+					<p class="h5">Abrir puertos o servicios comunes.</p>
+					<h1 class="display-6 mt-5">Abrir puertos o servicios comunes 🔧</h1>
+					<p>1 - Ejemplo: Permitir HTTP (80) y HTTPS (443):</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --permanent --add-service=http</code></pre>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --permanent --add-service=https</code></pre>
+					<p>2 - Ejemplo: Abrir un puerto específico (ej. 8080):</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --permanent --add-port=8080/tcp</code></pre>
+					<p>3 - Recargar el firewall para aplicar cambios:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --reload</code></pre>
+					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
+					<p>4 - Listar todas las reglas:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --list-all</code></pre>
+					<p>5 - Listar zonas activas:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --get-active-zones</code></pre>
+					<p>6 - Listar servicios permitidos:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --get-active-zones</code></pre>
+					<p>7 - Listar puertos abiertos:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --list-ports</code></pre>
+					<p>8 - Eliminar un puerto o servicio:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --permanent --remove-port=8080/tcp</code></pre>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --permanent --remove-service=http</code></pre>
+					<h1 class="display-6 mt-5">Configurar zona predeterminada (opcional) 💻</h1>
+					<p>9 - Ver zona actual:</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --get-default-zone</code></pre>
+					<p>10 - Cambiar zona predeterminada (ej. a public):</p>
+					<pre class=""><code class="language-bash">sudo firewall-cmd --set-default-zone=public</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>
+						La documentación oficial de nmcli se encuentra en:
+						<a href="https://networkmanager.dev/docs/api/latest/nmcli.html" class="">Nmcli</a>
+					</p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Desintalar Firewalld</h1>
+					<p class="h5">Eliminar por completo firewalld y tod sus configuraciones.</p>
+					<h1 class="display-6 mt-5">Para eliminar Firewalld del sistema 🔧</h1>
+					<p>1 - Detener el servicio de firewalld:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop firewalld</code></pre>
+					<p>2 - Deshabilitar firewalld y evitar que se inicie automáticamente al arrancar el sistema</p>
+					<pre class=""><code class="language-bash">sudo systemctl disable firewalld</code></pre>
+					<p>3 - Desinstalar el paquete de firewalld:</p>
+					<pre class=""><code class="language-bash">sudo dnf remove firewalld</code></pre>
+					<p>4 - Eliminar también los archivos de configuración de firewalld:</p>
+					<pre class=""><code class="language-bash">sudo rm -rf /etc/firewalld</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>
+						La documentación oficial de nmcli se encuentra en:
+						<a href="https://networkmanager.dev/docs/api/latest/nmcli.html" class="">Nmcli</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+		</main>
+		<!-- Footer-->
+<footer class="bg-dark py-4 mt-auto">
+	<div class="container px-5">
+		<div class="row align-items-center justify-content-between flex-column flex-sm-row">
+			<div class="col-auto"><div class="small m-0 text-white">Copyright &copy; C0d3 2025</div></div>
+			<div class="col-auto">
+				<a class="link-light small" href="#!">Privacy</a>
+				<span class="text-white mx-1">&middot;</span>
+				<a class="link-light small" href="#!">Terms</a>
+				<span class="text-white mx-1">&middot;</span>
+				<a class="link-light small" href="#!">Contact</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<!-- prism js -->
+		<script src="/js/prism.js"></script>
+		<!-- scripts -->
+		<script src="/js/scripts.js"></script>
+	</body>
+</html>

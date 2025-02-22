@@ -30,16 +30,20 @@ title: Server !!!
 					<p class="h5">La configuración específica del servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
 					<h1 class="display-6 mt-5">Repositorios y paquetes escenciales 🔧</h1>
 					<p>1 - Actualizamos el S.O y sus paquetes:</p>
-					<pre class=""><code class="language-bash">sudo dnf update && dnf upgrade</code></pre>
+					<pre class=""><code class="language-bash">sudo dnf update && dnf upgrade -y</code></pre>
 					<p>2 - Agregamos el repositorio EPEL:</p>
-					<pre class=""><code class="language-bash">sudo dnf install epel-release</code></pre>
+					<pre class=""><code class="language-bash">sudo dnf install epel-release -y</code></pre>
 					<p>3 - Instalamos paquetes escenciales:</p>
-					<pre class=""><code class="language-bash">sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git tar rsync util-linux-user nfs-utils bind-utils</code></pre>
+					<pre class=""><code class="language-bash">sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git tar rsync util-linux-user nfs-utils bind-utils -y</code></pre>
 					<h1 class="display-6 mt-5">Activar rpmfusion 🔧</h1>
 					<p>4 - habilitar el repositorio CRB:</p>
 					<pre class=""><code class="language-bash">sudo dnf config-manager --set-enabled crb</code></pre>
 					<p>5 - Importar EPEL y EPEL Next Repository:</p>
-					<pre class=""><code class="language-bash">sudo dnf install \ https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \ https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm</code></pre>
+					<pre class=""><code class="language-bash">
+						dnf install \
+							https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \
+							https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm -y
+					</code></pre>
 					<p>6 - Instale RPM Fusion Free:</p>
 					<pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
 					<p>7 - Instale RPM Fusion No Free:</p>
@@ -58,8 +62,13 @@ title: Server !!!
 					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
 					<p>1 - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
 					<pre class=""><code class="language-bash">sudo nano /etc/sysconfig/selinux</code></pre>
-					<p>2 - Modificamos la siguente linea:</p>
+					<p>2 - Modificamos la linea "SELINUX="</p>
+					<p>2.1 - Modo enforcing, SELinux aplica las políticas de seguridad activamente. Cualquier acción no permitida por las políticas será bloqueada y registrada en los logs.</p>
+					<pre class=""><code class="language-bash">SELINUX=enforcing</code></pre>
+					<p>2.2 - Modo permissive, SELinux no bloquea acciones, pero registra todas las violaciones de políticas en los logs. Es útil para depurar problemas sin afectar al sistema.</p>
 					<pre class=""><code class="language-bash">SELINUX=permissive</code></pre>
+					<p>2.3 - Modo disabled, SELinux está completamente desactivado. No se aplican políticas ni se generan logs.</p>
+					<pre class=""><code class="language-bash">SELINUX=disabled</code></pre>
 					<p>3 - Reiniciamos el sistema:</p>
 					<pre class=""><code class="language-bash">sudo reboot</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
