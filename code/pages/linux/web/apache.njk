@@ -26,6 +26,7 @@ title: Apache !!!
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
 					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Virtual Host</button>
+					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Eliminar</button>
 				</div>
 			</nav>
 			<div class="tab-content mt-3" id="nav-tabContent">
@@ -110,6 +111,27 @@ title: Apache !!!
 					</pre>
 					<p>5 - Reinicio del servicio para que tome los cambios::</p>
 					<pre class=""><code class="language-bash">sudo systemctl restart httpd</code></pre>
+					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<h1 class="display-6 mt-5">Documentación ✒️</h1>
+					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+				</div>
+				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
+					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<h1 class="display-6 mt-5">Eliminar HTTPD del sistema 🔧</h1>
+					<p>1 - Para eliminar por completo httpd de sistema primero detenemos y deshabilitamos el servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop httpd</code></pre>
+					<pre class=""><code class="language-bash">sudo systemctl disable httpd </code></pre>
+					<p>2 - Desinstalar el paquete httpd y dependencias:</p>
+					<pre class=""><code class="language-bash">sudo dnf remove httpd -y</code></pre>
+					<pre class=""><code class="language-bash">sudo dnf autoremove -y</code></pre>
+					<p>3 - Eliminar archivos residuales:</p>
+					<pre class=""><code class="language-bash">sudo rm -rf /etc/httpd/</code></pre>
+					<pre class=""><code class="language-bash">sudo rm -rf /var/log/httpd/</code></pre>
+					<p>4 - Eliminar directorio por defecto (opcional):</p>
+					<pre class=""><code class="language-bash">sudo rm -rf /var/www/html/</code></pre>
+					<p>5 - Verificar que httpd esté completamente removido:</p>
+					<pre class=""><code class="language-bash">rpm -qa | grep httpd</code></pre>
+					<pre class=""><code class="language-bash">which httpd</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
