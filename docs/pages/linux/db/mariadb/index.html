@@ -58,6 +58,12 @@
 <section class="">
 	<div class="container">
 		<div class="row mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/code/pages/linux/">Linux</a></li>
+					<li class="breadcrumb-item active" aria-current="page">MariaDB</li>
+				</ol>
+			</nav>
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
@@ -69,7 +75,6 @@
 			<div class="tab-content mt-3" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Instalación 🔧</h1>
 					<p>1 - Descargamos la ultima versión de mariadb:</p>
 					<pre class=""><code class="language-bash">curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash</code></pre>
@@ -97,13 +102,11 @@
 					<p>2 - Seguimos los pasos y respondemos segun nuestras necesidades:</p>
 					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
 					<p>1 - Para conectarnos a la base de datos localmente:</p>
 					<pre class=""><code class="language-bash">mariadb -u root -p</code></pre>
@@ -124,37 +127,26 @@
 					<p>9 - Recarga los privilegios:</p>
 					<pre class=""><code class="language-sql">FLUSH PRIVILEGES;</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Configuraciónes 🔧</h1>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> Extras</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Extras 🔧</h1>
 					<p>1 - Para crear un usuario para backups:</p>
 					<pre class=""><code class="language-sql">CREATE USER 'backup'@'localhost' IDENTIFIED BY 'passwd';</code></pre>
 					<p>2 - Le damos pribilegios de select:</p>
 					<pre class=""><code class="language-sql">GRANT SELECT, LOCK TABLES, SHOW DATABASES ON *.* TO 'backup'@'localhost';</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
-				</div>
-				<div class="tab-pane fade" id="nav-configuraciones" role="tabpanel" aria-labelledby="nav-configuraciones-tab">
-					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
-					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
 				</div>
 			</div>
 		</div>

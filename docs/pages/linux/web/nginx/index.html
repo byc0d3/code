@@ -58,17 +58,21 @@
 <section class="">
 	<div class="container">
 		<div class="row mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/code/pages/linux/">Linux</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Nginx</li>
+				</ol>
+			</nav>
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-RHEL" aria-selected="true">Instalación</button>
 					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Virtual Host</button>
-					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Configuraciones</button>
 				</div>
 			</nav>
 			<div class="tab-content mt-3" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Instalación 🔧</h1>
 					<p>1 - Para instalar la ultima version de apache usamos:</p>
 					<pre class=""><code class="language-bash">sudo dnf install nginx</code></pre>
@@ -89,13 +93,11 @@
 					<p>8 - Desactivar inicio automatico del Servicio:</p>
 					<pre class=""><code class="language-bash">sudo systemctl disable nginx</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
+					<p>La documentación oficial de nginx se encuentra en: <a href="https://nginx.org/en/docs/" class="">nginx</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
 					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
 					<p>1 - Para crear un VirtuaHost primero creamo un archivo en la siguiente ruta <mark>/etc/nginx/conf.d/</mark>, por lo general se usa el nombre del dominio:</p>
 					<pre class=""><code class="language-bash">sudo nano /etc/nginx/conf.d/dominio.local.conf</code></pre>
@@ -158,15 +160,8 @@
 					<p>4 - Reinicio del servicio para que tome los cambios:</p>
 					<pre class=""><code class="language-bash">sudo systemctl restart nginx</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de apache se encuentra en: <a href="https://httpd.apache.org/docs-project/" class="">Apache</a></p>
-				</div>
-				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
-					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en RHEL como Rocky Linux, Almalinux y Centos.</p>
-					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
+					<p>La documentación oficial de nginx se encuentra en: <a href="https://nginx.org/en/docs/" class="">nginx</a></p>
 				</div>
 			</div>
 		</div>

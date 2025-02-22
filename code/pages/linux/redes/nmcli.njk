@@ -16,6 +16,12 @@ title: Redes !!!
 <section class="">
 	<div class="container">
 		<div class="row mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/pages/linux/">Linux</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Nmcli</li>
+				</ol>
+			</nav>
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Nmcli</button>
@@ -25,7 +31,6 @@ title: Redes !!!
 			<div class="tab-content mt-3" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
-					<p class="h5">La configuración específica de las redes en un servidor dependerá del uso que le vayas a dar, estos son pasos basicos que por lo general se usan en todos los servidores.</p>
 					<h1 class="display-6 mt-5">Información de las interfaces de red 🔧</h1>
 					<p>1 - Primero listaremos todas las interfaces de red en nuestro sistema:</p>
 					<pre class=""><code class="language-bash">sudo nmcli device show</code></pre>
@@ -53,7 +58,6 @@ title: Redes !!!
 					<p>11 - para eliminar una conexion existente:</p>
 					<pre class=""><code class="language-bash">sudo nmcli con delete ensxxx</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
-					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>
 						La documentación oficial de nmcli se encuentra en:
@@ -62,7 +66,6 @@ title: Redes !!!
 				</div>
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Nmcli Routing</h1>
-					<p class="h5">El routing con nmcli implica la configuración de rutas de red en un sistema Linux para definir cómo se debe enrutar el tráfico de red.</p>
 					<h1 class="display-6 mt-5">Configuración de segunda interfaz de red 🔧</h1>
 					<p>1 - Antes de proseguir es recomendable eliminar la interfaz creada de manera automática por el sistema:</p>
 					<p>1.1 - Crearemos una interfaz de red, sin gateway y con IPv6 deshabilitado:</p>
