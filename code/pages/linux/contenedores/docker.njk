@@ -56,7 +56,16 @@ title: Docker !!!
 					<p>2 - Dar permisos de ejecución:</p>
 					<pre class=""><code class="language-bash">sudo chmod +x /usr/local/bin/docker-compose</code></pre>
 					<p>3 - Verificar la instalación:</p>
-					<pre class=""><code class="language-bash">docker-compose --version</code></pre>
+					<pre class=""><code class="language-bash">sudo docker-compose --version</code></pre>
+					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
+					<p>4 - Iniciar los contenedores en segundo plano:</p>
+					<pre class=""><code class="language-bash">sudo docker compose up -d</code></pre>
+					<p>5 - Ver los contenedores en ejecución:</p>
+					<pre class=""><code class="language-bash">sudo docker ps</code></pre>
+					<p>6 - Detener todos los contenedores:</p>
+					<pre class=""><code class="language-bash">sudo docker compose down</code></pre>
+					<p>7 - Ingresar el bash del contenedor:</p>
+					<pre class=""><code class="language-bash">sudo docker exec -it nombreContenedor /bin/bash</code></pre>
 					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>La documentación oficial de Docker se encuentra en: <a href="https://docs.docker.com/build-cloud/" class="">Docker</a></p>

@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="/code/css/prism.css">
 		<!-- Styles -->
 		<link rel="stylesheet" href="/code/css/styles.css">
-		<title>C0d3 | MariaDB !!!</title>
+		<title>C0d3 | PostgreSQL !!!</title>
 	</head>
 	<body class="d-flex flex-column">
 		<main class="flex-shrink-0">
@@ -49,8 +49,8 @@
 <section class="py-5">
 	<div class="container">
 		<div class="row text-center mb-5">
-			<h1 class="fw-bolder">MariaDB</h1>
-			<p class="lead fw-normal text-muted mb-0">MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL (General Public License).</p>
+			<h1 class="fw-bolder">PostgreSQL</h1>
+			<p class="lead fw-normal text-muted mb-0">PostgreSQL, también llamado Postgres, es un sistema de gestión de bases de datos relacional orientado a objetos y de código abierto, publicado bajo la licencia PostgreSQL, similar a la BSD o la MIT.</p>
 		</div>
 	</div>
 </section>
@@ -61,7 +61,7 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/code/pages/linux/">Linux</a></li>
-					<li class="breadcrumb-item active" aria-current="page">MariaDB</li>
+					<li class="breadcrumb-item active" aria-current="page">PostgreSQL</li>
 				</ol>
 			</nav>
 			<nav>
@@ -76,75 +76,86 @@
 				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<h1 class="display-6 mt-5">Instalación 🔧</h1>
-					<p>1 - Descargamos la ultima versión de mariadb:</p>
-					<pre class=""><code class="language-bash">curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash</code></pre>
-					<p>1 - Instalamos MariaDB:</p>
-					<pre class=""><code class="language-bash">sudo dnf install mariadb-server</code></pre>
-					<h1 class="display-6 mt-5">Versión 📦</h1>
-					<p>2 - Para ver la version de MariaDB:</p>
-					<pre class=""><code class="language-bash">sudo mariadb -V</code></pre>
+					<p>1 - Agregamos los repositorios de Redhat:</p>
+					<pre class=""><code class="language-bash">dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm</code></pre>
+					<p>2 - Desactivamos el modulo por defecto de PostgreSQL:</p>
+					<pre class=""><code class="language-bash">dnf -qy module disable postgresql</code></pre>
+					<p>3 - Instalamos PostgreSQL:</p>
+					<pre class=""><code class="language-bash">dnf install -y postgresql17-server postgresql17</code></pre>
+					<p>4 - Iniciamos la base de datos:</p>
+					<pre class=""><code class="language-bash">sudo /usr/pgsql-17/bin/postgresql-17-setup initdb</code></pre>
 					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
-					<p>3 - Activar inicio automatico del Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
-					<p>4 - Iniciar Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl start mariadb</code></pre>
-					<p>5- Status de Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl status mariadb</code></pre>
-					<p>6 - Reiniciar Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl restart mariadb</code></pre>
-					<p>7 - Detener Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl stop mariadb</code></pre>
-					<p>8 - Desactivar inicio automatico del Servicio:</p>
-					<pre class=""><code class="language-bash">sudo systemctl disable mariadb</code></pre>
-					<h1 class="display-6 mt-5">Establecer configuraciones básicas de seguridad ⚙️</h1>
-					<p>1 - Luego de instalado y iniciado el servicio de MariaDB configuramos unas politicas de seguridad:</p>
-					<pre class=""><code class="language-bash">sudo mariadb-secure-installation</code></pre>
-					<p>2 - Seguimos los pasos y respondemos segun nuestras necesidades:</p>
-					<pre class=""><code class="language-bash">sudo systemctl enable mariadb</code></pre>
+					<p>5 - Activar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">systemctl enable postgresql-17</code></pre>
+					<p>6 - Iniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl start postgresql-17</code></pre>
+					<p>7- Status de Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl status postgresql-17</code></pre>
+					<p>8 - Reiniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart postgresql-17</code></pre>
+					<p>9 - Detener Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl stop postgresql-17</code></pre>
+					<p>10 - Desactivar inicio automatico del Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl disable postgresql-17</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
+					<p>La documentación oficial de PostgreSQL se encuentra en: <a href="https://www.postgresql.org/docs/" class="">PostgreSQL</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
 					<p>1 - Para conectarnos a la base de datos localmente:</p>
-					<pre class=""><code class="language-bash">mariadb -u root -p</code></pre>
+					<pre class=""><code class="language-bash">sudo -u postgres psql</code></pre>
 					<p>2 - Para conectarnos la base de datos remotamente:</p>
-					<pre class=""><code class="language-bash">mariadb -h host -u user -p</code></pre>
+					<pre class=""><code class="language-bash">psql -h host -U postgres -d postgres</code></pre>
 					<p>3 - Crear base de datos con utf8_general:</p>
-					<pre class=""><code class="language-sql">CREATE DATABASE database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></pre>
+					<pre class=""><code class="language-sql">CREATE DATABASE database ENCODING 'UTF8' LC_COLLATE 'en_US.UTF-8' LC_CTYPE 'en_US.UTF-8' TEMPLATE template0;</code></pre>
 					<p>4 - Creamos un usuario:</p>
-					<pre class=""><code class="language-sql">CREATE USER 'user'@'%' IDENTIFIED BY 'passwd';</code></pre>
+					<pre class=""><code class="language-sql">CREATE USER user WITH PASSWORD 'passwd';</code></pre>
 					<p>5 - Le damos permisos a ese usuario sobre esa base de datos:</p>
-					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON database.* TO 'user'@'%';</code></pre>
+					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON DATABASE database TO user;</code></pre>
 					<p>6 - Para que un usuario Administrador tenga permisos sobre todas las bases de datos:</p>
-					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;</code></pre>
-					<p>7 - Permiso a usuario solo de CRUD sobre esa base de datos:</p>
-					<pre class=""><code class="language-sql">GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON database.* TO 'user'@'%';</code></pre>
-					<p>8 - Recarga los privilegios:</p>
-					<pre class=""><code class="language-sql">FLUSH PRIVILEGES;</code></pre>
+					<pre class=""><code class="language-sql">ALTER USER user WITH SUPERUSER;</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
+					<p>La documentación oficial de PostgreSQL se encuentra en: <a href="https://www.postgresql.org/docs/" class="">PostgreSQL</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<h1 class="display-6 mt-5">Configuraciónes 🔧</h1>
+					<p>1 - Para permitir conexiones a la base de datos editamos el archivo postgresql.conf:</p>
+					<pre class=""><code class="language-bash">sudo nano /var/lib/pgsql/17/data/postgresql.conf</code></pre>
+					<p>2 - Buscamos la linea listen_addresses y la dejamos de este modo:</p>
+					<pre class=""><code class="language-bash">listen_addresses = '*'</code></pre>
+					<p>3 - Guardamos los cambios:</p>
+					<p>4 - Ahora editamos el archivo pg_hba.conf y agregamos los clientes a permitir:</p>
+					<pre class=""><code class="language-bash">nano /var/lib/pgsql/17/data/postgresql.conf</code></pre>
+					<p>5 - Preferiblemente agregar una linea por cada cliente:</p>
+					<pre class=""><code class="language-bash">host	all		all		10.31.67.130/24		md5</code></pre>
+					<pre class=""><code class="language-bash">host	all		all		10.31.225.99/32		md5</code></pre>
+					<p>6 - Para cambair la clave del usuario postgres:</p>
+					<pre class=""><code class="language-bash">\password postgres</code></pre>
+					<p>7 - Salimos:</p>
+					<pre class=""><code class="language-bash">\q</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
+					<p>La documentación oficial de PostgreSQL se encuentra en: <a href="https://www.postgresql.org/docs/" class="">PostgreSQL</a></p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab">
 					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> Extras</h1>
 					<h1 class="display-6 mt-5">Extras 🔧</h1>
 					<p>1 - Para crear un usuario para backups:</p>
-					<pre class=""><code class="language-sql">CREATE USER 'backup'@'localhost' IDENTIFIED BY 'passwd';</code></pre>
-					<p>2 - Le damos pribilegios de select:</p>
-					<pre class=""><code class="language-sql">GRANT SELECT, LOCK TABLES, SHOW DATABASES ON *.* TO 'backup'@'localhost';</code></pre>
+					<pre class=""><code class="language-sql">CREATE USER backup WITH PASSWORD 'passwd';</code></pre>
+					<p>2 - Conceder permisos de SELECT sobre todas las tablas de una base de datos:</p>
+					<pre class=""><code class="language-sql">
+						GRANT CONNECT ON DATABASE database TO backup;
+						\c database;
+						GRANT SELECT ON ALL TABLES IN SCHEMA public TO backup;
+					</code></pre>
+					<p>3 - Debes repetir el proceso anterior para cada base de datos.</p>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de MariaDB se encuentra en: <a href="https://mariadb.org/documentation/" class="">MariaDB</a></p>
+					<p>La documentación oficial de PostgreSQL se encuentra en: <a href="https://www.postgresql.org/docs/" class="">PostgreSQL</a></p>
 				</div>
 			</div>
 		</div>
