@@ -106,15 +106,17 @@
 					<h1 class="display-6 mt-5">Querys Basicos 🔧</h1>
 					<p>1 - Para conectarnos a la base de datos localmente:</p>
 					<pre class=""><code class="language-bash">sudo -u postgres psql</code></pre>
-					<p>2 - Para conectarnos la base de datos remotamente:</p>
+					<p>2 - Cambiar la contraseña del usuario postgres:</p>
+					<pre class=""><code class="language-bash">ALTER USER postgres WITH PASSWORD 'nueva_contraseña';</code></pre>
+					<p>3 - Para conectarnos la base de datos remotamente:</p>
 					<pre class=""><code class="language-bash">psql -h host -U postgres -d postgres</code></pre>
-					<p>3 - Crear base de datos con utf8_general:</p>
+					<p>4 - Crear base de datos con utf8_general:</p>
 					<pre class=""><code class="language-sql">CREATE DATABASE database ENCODING 'UTF8' LC_COLLATE 'en_US.UTF-8' LC_CTYPE 'en_US.UTF-8' TEMPLATE template0;</code></pre>
-					<p>4 - Creamos un usuario:</p>
+					<p>5 - Creamos un usuario:</p>
 					<pre class=""><code class="language-sql">CREATE USER user WITH PASSWORD 'passwd';</code></pre>
-					<p>5 - Le damos permisos a ese usuario sobre esa base de datos:</p>
+					<p>6 - Le damos permisos a ese usuario sobre esa base de datos:</p>
 					<pre class=""><code class="language-sql">GRANT ALL PRIVILEGES ON DATABASE database TO user;</code></pre>
-					<p>6 - Para que un usuario Administrador tenga permisos sobre todas las bases de datos:</p>
+					<p>7 - Para que un usuario Administrador tenga permisos sobre todas las bases de datos:</p>
 					<pre class=""><code class="language-sql">ALTER USER user WITH SUPERUSER;</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
@@ -129,14 +131,12 @@
 					<pre class=""><code class="language-bash">listen_addresses = '*'</code></pre>
 					<p>3 - Guardamos los cambios:</p>
 					<p>4 - Ahora editamos el archivo pg_hba.conf y agregamos los clientes a permitir:</p>
-					<pre class=""><code class="language-bash">nano /var/lib/pgsql/17/data/postgresql.conf</code></pre>
+					<pre class=""><code class="language-bash">nano /var/lib/pgsql/17/data/pg_hba.conf </code></pre>
 					<p>5 - Preferiblemente agregar una linea por cada cliente:</p>
 					<pre class=""><code class="language-bash">host	all		all		10.31.67.130/24		md5</code></pre>
 					<pre class=""><code class="language-bash">host	all		all		10.31.225.99/32		md5</code></pre>
-					<p>6 - Para cambair la clave del usuario postgres:</p>
-					<pre class=""><code class="language-bash">\password postgres</code></pre>
-					<p>7 - Salimos:</p>
-					<pre class=""><code class="language-bash">\q</code></pre>
+					<p>6 - Reiniciar Servicio:</p>
+					<pre class=""><code class="language-bash">sudo systemctl restart postgresql-17</code></pre>
 					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>La documentación oficial de PostgreSQL se encuentra en: <a href="https://www.postgresql.org/docs/" class="">PostgreSQL</a></p>
