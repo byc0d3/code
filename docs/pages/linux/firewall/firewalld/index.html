@@ -2,17 +2,17 @@
 <html lang="es">
 	<head>
 		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="/img/favicon.svg" rel="icon" type="image/x-icon" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/code/img/favicon.svg" rel="icon" type="image/x-icon">
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="/css/bootstrap.css" />
+		<link rel="stylesheet" href="/code/css/bootstrap.css">
 		<!-- Bootstrap icons-->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
 		<!-- prism css-->
-		<link rel="stylesheet" href="/css/prism.css" />
+		<link rel="stylesheet" href="/code/css/prism.css">
 		<!-- Styles -->
-		<link rel="stylesheet" href="/css/styles.css" />
+		<link rel="stylesheet" href="/code/css/styles.css">
 		<title>C0d3 | Firewalld !!!</title>
 	</head>
 	<body class="d-flex flex-column">
@@ -21,24 +21,24 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
 	<div class="container px-5">
 		<a class="navbar-brand" href="#">
-			<img src="/img/favicon.svg" alt="Bootstrap" width="30" height="24" />
+			<img src="/code/img/favicon.svg" alt="Bootstrap" width="30" height="24">
 		</a>
-		<a class="navbar-brand" href="/index.html">C0d3s</a>
+		<a class="navbar-brand" href="/code/index.html">C0d3s</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/about">Acerca</a></li>
-				<li class="nav-item"><a class="nav-link" href="/contact">Contactos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/code/">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="/code/about">Acerca</a></li>
+				<li class="nav-item"><a class="nav-link" href="/code/contact">Contactos</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-						<li><a class="dropdown-item" href="/blog">Blog</a></li>
+						<li><a class="dropdown-item" href="/code/blog">Blog</a></li>
 					</ul>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="/codes">Codigos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/code/codes">Codigos</a></li>
 			</ul>
 		</div>
 	</div>
@@ -60,7 +60,7 @@
 		<div class="row mb-3">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/pages/linux/">Linux</a></li>
+					<li class="breadcrumb-item"><a href="/code/pages/linux/">Linux</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Firewalld</li>
 				</ol>
 			</nav>
@@ -73,7 +73,7 @@
 			</nav>
 			<div class="tab-content mt-3" id="nav-tabContent">
 				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
+					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
 					<h1 class="display-6 mt-5">Instalar y gestionar FirewallD 🔧</h1>
 					<p>1 - Primero verificamos que no este instalado en el sistema:</p>
 					<pre class=""><code class="language-bash">sudo systemctl status firewalld</code></pre>
@@ -96,7 +96,7 @@
 					<pre class=""><code class="language-bash">sudo systemctl stop firewalld</code></pre>
 					<p>10 - Desactivar inicio automatico del Servicio:</p>
 					<pre class=""><code class="language-bash">sudo systemctl disable firewalld</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>
 						La documentación oficial de Firewalld se encuentra en:
@@ -104,7 +104,7 @@
 					</p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Configuración básica</h1>
+					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60">Configuración básica</h1>
 					<p class="h5">Abrir puertos o servicios comunes.</p>
 					<h1 class="display-6 mt-5">Abrir puertos o servicios comunes 🔧</h1>
 					<p>1 - Ejemplo: Permitir HTTP (80) y HTTPS (443):</p>
@@ -131,7 +131,7 @@
 					<pre class=""><code class="language-bash">sudo firewall-cmd --get-default-zone</code></pre>
 					<p>10 - Cambiar zona predeterminada (ej. a public):</p>
 					<pre class=""><code class="language-bash">sudo firewall-cmd --set-default-zone=public</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<p class="h5">Estas instrucciones estan garantizadas para Sistemas Operativos basados en Debian, Ubuntu.</p>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>
@@ -140,7 +140,7 @@
 					</p>
 				</div>
 				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" />Desintalar Firewalld</h1>
+					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60">Desintalar Firewalld</h1>
 					<p class="h5">Eliminar por completo firewalld y tod sus configuraciones.</p>
 					<h1 class="display-6 mt-5">Para eliminar Firewalld del sistema 🔧</h1>
 					<p>1 - Detener el servicio de firewalld:</p>
@@ -151,7 +151,7 @@
 					<pre class=""><code class="language-bash">sudo dnf remove firewalld</code></pre>
 					<p>4 - Eliminar también los archivos de configuración de firewalld:</p>
 					<pre class=""><code class="language-bash">sudo rm -rf /etc/firewalld</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
+					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
 					<h1 class="display-6 mt-5">Documentación ✒️</h1>
 					<p>
 						La documentación oficial de Firewalld se encuentra en:
@@ -182,8 +182,8 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<!-- prism js -->
-		<script src="/js/prism.js"></script>
+		<script src="/code/js/prism.js"></script>
 		<!-- scripts -->
-		<script src="/js/scripts.js"></script>
+		<script src="/code/js/scripts.js"></script>
 	</body>
 </html>
