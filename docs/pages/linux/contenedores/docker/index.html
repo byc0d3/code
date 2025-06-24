@@ -2,17 +2,17 @@
 <html lang="es">
 	<head>
 		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="/code/img/favicon.svg" rel="icon" type="image/x-icon">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="/img/favicon.svg" rel="icon" type="image/x-icon" />
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="/code/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap.css" />
 		<!-- Bootstrap icons-->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 		<!-- prism css-->
-		<link rel="stylesheet" href="/code/css/prism.css">
+		<link rel="stylesheet" href="/css/prism.css" />
 		<!-- Styles -->
-		<link rel="stylesheet" href="/code/css/styles.css">
+		<link rel="stylesheet" href="/css/styles.css" />
 		<title>C0d3 | Docker !!!</title>
 	</head>
 	<body class="d-flex flex-column">
@@ -21,24 +21,24 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
 	<div class="container px-5">
 		<a class="navbar-brand" href="#">
-			<img src="/code/img/favicon.svg" alt="Bootstrap" width="30" height="24">
+			<img src="/img/favicon.svg" alt="Bootstrap" width="30" height="24" />
 		</a>
-		<a class="navbar-brand" href="/code/index.html">C0d3s</a>
+		<a class="navbar-brand" href="/index.html">C0d3s</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="/code/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/code/about">Acerca</a></li>
-				<li class="nav-item"><a class="nav-link" href="/code/contact">Contactos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="/about">Acerca</a></li>
+				<li class="nav-item"><a class="nav-link" href="/contact">Contactos</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-						<li><a class="dropdown-item" href="/code/blog">Blog</a></li>
+						<li><a class="dropdown-item" href="/blog">Blog</a></li>
 					</ul>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="/code/codes">Codigos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/codes">Codigos</a></li>
 			</ul>
 		</div>
 	</div>
@@ -47,105 +47,118 @@
 			
 <!-- Page Content-->
 <section class="py-5">
-	<div class="container">
-		<div class="row text-center mb-5">
-			<h1 class="fw-bolder">Docker</h1>
-			<p class="lead fw-normal text-muted mb-0">Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y versión ejecutable.</p>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row text-center mb-5">
+            <h1 class="fw-bolder">Docker</h1>
+            <p class="lead fw-normal text-muted mb-0">Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y versión ejecutable.</p>
+        </div>
+    </div>
 </section>
-
 <section class="">
-	<div class="container">
-		<div class="row mb-3">
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/code/pages/linux/">Linux</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Docker</li>
-				</ol>
-			</nav>
-			<nav>
-				<div class="nav nav-tabs" id="nav-tab" role="tablist">
-					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
-					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Docker Compose</button>
-					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Eliminar</button>
-				</div>
-			</nav>
-			<div class="tab-content mt-3" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<h1 class="display-6 mt-5">Instalación 🔧</h1>
-					<p>1 - Para instalar la ultima version de docker, primero instalamos dependencias necesarias:</p>
-					<pre class=""><code class="language-bash">sudo dnf install -y dnf-utils device-mapper-persistent-data lvm2</code></pre>
-					<p>2 - Agregar el repositorio oficial de Docker:</p>
-					<pre class=""><code class="language-bash">sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo</code></pre>
-					<p>3 - Instalar Docker Engine (Community Edition):</p>
-					<pre class=""><code class="language-bash">sudo dnf install -y docker-ce docker-ce-cli containerd.io</code></pre>
-					<p>4 - Habilitar e iniciar el servicio Docker:</p>
-					<pre class=""><code class="language-bash">sudo systemctl enable docker --now</code></pre>
-					<p>5 - Agregar tu usuario al grupo docker (para evitar usar sudo):</p>
-					<pre class=""><code class="language-bash">sudo usermod -aG docker $USER</code></pre>
-					<pre class=""><code class="language-bash">newgrp docker</code></pre>
-					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de Docker se encuentra en: <a href="https://docs.docker.com/build-cloud/" class="">Docker</a></p>
-				</div>
-				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
-					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<h1 class="display-6 mt-5">Instalar Docker Compose 🔧</h1>
-					<p>1 - Descarga la última versión desde el repositorio oficial:</p>
-					<pre class=""><code class="language-bash">sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
-					<p>2 - Dar permisos de ejecución:</p>
-					<pre class=""><code class="language-bash">sudo chmod +x /usr/local/bin/docker-compose</code></pre>
-					<p>3 - Verificar la instalación:</p>
-					<pre class=""><code class="language-bash">sudo docker-compose --version</code></pre>
-					<h1 class="display-6 mt-5">Comandos basicos 💻</h1>
-					<p>4 - Iniciar los contenedores en segundo plano:</p>
-					<pre class=""><code class="language-bash">sudo docker compose up -d</code></pre>
-					<p>5 - Ver los contenedores en ejecución:</p>
-					<pre class=""><code class="language-bash">sudo docker ps</code></pre>
-					<p>6 - Detener todos los contenedores:</p>
-					<pre class=""><code class="language-bash">sudo docker compose down</code></pre>
-					<p>7 - Ingresar el bash del contenedor:</p>
-					<pre class=""><code class="language-bash">sudo docker exec -it nombreContenedor /bin/bash</code></pre>
-					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de Docker se encuentra en: <a href="https://docs.docker.com/build-cloud/" class="">Docker</a></p>
-				</div>
-				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
-					<h1 class="display-6"><img src="/code/img/rhel.png" alt="" width="60"> RHEL</h1>
-					<h1 class="display-6 mt-5">Eliminar Docker y Docker Compose 🔧</h1>
-					<p>1 - Detener y eliminar todos los contenedores en ejecución (opcional):</p>
-					<pre class=""><code class="language-bash">sudo docker stop $(sudo docker ps -aq)</code></pre>
-					<pre class=""><code class="language-bash">sudo docker system prune -a --volumes</code></pre>
-					<p>2 - Desinstalar paquetes de Docker:</p>
-					<pre class=""><code class="language-bash">sudo dnf list installed | grep docker</code></pre>
-					<pre class=""><code class="language-bash">sudo dnf remove -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</code></pre>
-					<p>3 - Eliminar archivos residuales de Docker:</p>
-					<pre class=""><code class="language-bash">sudo rm -rf /var/lib/docker</code></pre>
-					<pre class=""><code class="language-bash">sudo rm -rf /var/lib/containerd</code></pre>
-					<pre class=""><code class="language-bash">sudo rm -rf /etc/docker</code></pre>
-					<p>4 - Eliminar Docker Compose, Si lo instalaste manualmente (con curl):</p>
-					<pre class=""><code class="language-bash">sudo rm -f /usr/local/bin/docker-compose</code></pre>
-					<pre class=""><code class="language-bash">sudo rm -f /usr/bin/docker-compose</code></pre>
-					<p>5 - Eliminar Docker Compose, Si lo instalaste desde el repositorio:</p>
-					<pre class=""><code class="language-bash">sudo dnf remove -y docker-compose-plugin</code></pre>
-					<p>6 - Eliminar el repositorio de Docker (opcional):</p>
-					<pre class=""><code class="language-bash">sudo rm /etc/yum.repos.d/docker-ce.repo</code></pre>
-					<p>7 - Eliminar el grupo docker (si lo creaste):</p>
-					<pre class=""><code class="language-bash">sudo groupdel docker</code></pre>
-					<p>8 - Verificar eliminación:</p>
-					<pre class=""><code class="language-bash">docker --version</code></pre>
-					<pre class=""><code class="language-bash">docker-compose --version</code></pre>
-					<p>9 - (Opcional) Limpiar dependencias no usadas:</p>
-					<pre class=""><code class="language-bash">sudo dnf autoremove -y</code></pre>
-					<h1 class="display-6 mt-5"><img src="/code/img/debian.png" alt="" width="60"> Debian</h1>
-					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>La documentación oficial de Docker se encuentra en: <a href="https://docs.docker.com/build-cloud/" class="">Docker</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row mb-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/pages/linux/">Linux</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Docker</li>
+                </ol>
+            </nav>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Instalación</button>
+                    <button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">Docker Compose</button>
+                    <button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Eliminar</button>
+                </div>
+            </nav>
+            <div class="tab-content mt-3" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Instalación 🔧</h1>
+                    <p>1 - Para instalar la ultima version de docker, primero instalamos dependencias necesarias:</p>
+                    <pre class=""><code class="language-bash">sudo dnf install -y dnf-utils device-mapper-persistent-data lvm2</code></pre>
+                    <p>2 - Agregar el repositorio oficial de Docker:</p>
+                    <pre class=""><code class="language-bash">sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo</code></pre>
+                    <p>3 - Instalar Docker Engine (Community Edition):</p>
+                    <pre class=""><code class="language-bash">sudo dnf install -y docker-ce docker-ce-cli containerd.io</code></pre>
+                    <p>4 - Habilitar e iniciar el servicio Docker:</p>
+                    <pre class=""><code class="language-bash">sudo systemctl enable docker --now</code></pre>
+                    <p>5 - Agregar tu usuario al grupo docker (para evitar usar sudo):</p>
+                    <pre class=""><code class="language-bash">sudo usermod -aG docker $USER</code></pre>
+                    <pre class=""><code class="language-bash">newgrp docker</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                    <h1 class="display-6 mt-5">Documentación ✒️</h1>
+                    <p>La documentación oficial de Docker se encuentra en:
+                        <a href="https://docs.docker.com/build-cloud/" class="">Docker</a>
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Instalar Docker Compose 🔧</h1>
+                    <p>1 - Descarga la última versión desde el repositorio oficial:</p>
+                    <pre class=""><code class="language-bash">sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+                    <p>2 - Dar permisos de ejecución:</p>
+                    <pre class=""><code class="language-bash">sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+                    <p>3 - Verificar la instalación:</p>
+                    <pre class=""><code class="language-bash">sudo docker-compose --version</code></pre>
+                    <h1 class="display-6 mt-5">Comandos basicos 💻</h1>
+                    <p>4 - Iniciar los contenedores en segundo plano:</p>
+                    <pre class=""><code class="language-bash">sudo docker compose up -d</code></pre>
+                    <p>5 - Ver los contenedores en ejecución:</p>
+                    <pre class=""><code class="language-bash">sudo docker ps</code></pre>
+                    <p>6 - Detener todos los contenedores:</p>
+                    <pre class=""><code class="language-bash">sudo docker compose stop</code></pre>
+                    <p>7 - Ingresar el bash del contenedor:</p>
+                    <pre class=""><code class="language-bash">sudo docker exec -it nombreContenedor /bin/bash</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                    <h1 class="display-6 mt-5">Documentación ✒️</h1>
+                    <p>La documentación oficial de Docker se encuentra en:
+                        <a href="https://docs.docker.com/build-cloud/" class="">Docker</a>
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Eliminar Docker y Docker Compose 🔧</h1>
+                    <p>1 - Detener y eliminar todos los contenedores en ejecución (opcional):</p>
+                    <pre class=""><code class="language-bash">sudo docker stop $(sudo docker ps -aq)</code></pre>
+                    <pre class=""><code class="language-bash">sudo docker system prune -a --volumes</code></pre>
+                    <p>2 - Desinstalar paquetes de Docker:</p>
+                    <pre class=""><code class="language-bash">sudo dnf list installed | grep docker</code></pre>
+                    <pre class=""><code class="language-bash">sudo dnf remove -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</code></pre>
+                    <p>3 - Eliminar archivos residuales de Docker:</p>
+                    <pre class=""><code class="language-bash">sudo rm -rf /var/lib/docker</code></pre>
+                    <pre class=""><code class="language-bash">sudo rm -rf /var/lib/containerd</code></pre>
+                    <pre class=""><code class="language-bash">sudo rm -rf /etc/docker</code></pre>
+                    <p>4 - Eliminar Docker Compose, Si lo instalaste manualmente (con curl):</p>
+                    <pre class=""><code class="language-bash">sudo rm -f /usr/local/bin/docker-compose</code></pre>
+                    <pre class=""><code class="language-bash">sudo rm -f /usr/bin/docker-compose</code></pre>
+                    <p>5 - Eliminar Docker Compose, Si lo instalaste desde el repositorio:</p>
+                    <pre class=""><code class="language-bash">sudo dnf remove -y docker-compose-plugin</code></pre>
+                    <p>6 - Eliminar el repositorio de Docker (opcional):</p>
+                    <pre class=""><code class="language-bash">sudo rm /etc/yum.repos.d/docker-ce.repo</code></pre>
+                    <p>7 - Eliminar el grupo docker (si lo creaste):</p>
+                    <pre class=""><code class="language-bash">sudo groupdel docker</code></pre>
+                    <p>8 - Verificar eliminación:</p>
+                    <pre class=""><code class="language-bash">docker --version</code></pre>
+                    <pre class=""><code class="language-bash">docker-compose --version</code></pre>
+                    <p>9 - (Opcional) Limpiar dependencias no usadas:</p>
+                    <pre class=""><code class="language-bash">sudo dnf autoremove -y</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                    <h1 class="display-6 mt-5">Documentación ✒️</h1>
+                    <p>La documentación oficial de Docker se encuentra en:
+                        <a href="https://docs.docker.com/build-cloud/" class="">Docker</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 		</main>
@@ -167,8 +180,8 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<!-- prism js -->
-		<script src="/code/js/prism.js"></script>
+		<script src="/js/prism.js"></script>
 		<!-- scripts -->
-		<script src="/code/js/scripts.js"></script>
+		<script src="/js/scripts.js"></script>
 	</body>
 </html>
