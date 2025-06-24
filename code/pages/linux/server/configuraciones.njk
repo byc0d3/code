@@ -5,100 +5,108 @@ title: Server !!!
 
 <!-- Page Content-->
 <section class="py-5">
-	<div class="container">
-		<div class="row text-center mb-5">
-			<h1 class="fw-bolder">Server</h1>
-			<p class="lead fw-normal text-muted mb-0">Es un sistema que proporciona servicios, datos o recursos a otras computadoras o dispositivos, conocidos como "clientes", a través de una red, ya sea internet o una red local..</p>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row text-center mb-5">
+            <h1 class="fw-bolder">Server</h1>
+            <p class="lead fw-normal text-muted mb-0">Es un sistema que proporciona servicios, datos o recursos a otras computadoras o dispositivos, conocidos como "clientes", a través de una red, ya sea internet o una red local..</p>
+        </div>
+    </div>
 </section>
-
 <section class="">
-	<div class="container">
-		<div class="row mb-3">
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/pages/linux/">Linux</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Configuraciones iniciales</li>
-				</ol>
-			</nav>
-			<nav>
-				<div class="nav nav-tabs" id="nav-tab" role="tablist">
-					<button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Primeros pasos</button>
-					<button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">SELinux</button>
-					<button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Time-Zone</button>
-					<button class="nav-link text-dark" id="nav-tab4-tab" data-bs-toggle="tab" data-bs-target="#nav-tab4" type="button" role="tab" aria-controls="nav-tab4" aria-selected="false">Banner</button>
-				</div>
-			</nav>
-			<div class="tab-content mt-3" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
-					<h1 class="display-6 mt-5">Repositorios y paquetes escenciales 🔧</h1>
-					<p>1 - Actualizamos el S.O y sus paquetes:</p>
-					<pre class=""><code class="language-bash">sudo dnf update && dnf upgrade -y</code></pre>
-					<p>2 - Agregamos el repositorio EPEL:</p>
-					<pre class=""><code class="language-bash">sudo dnf install epel-release -y</code></pre>
-					<p>3 - Instalamos paquetes escenciales:</p>
-					<pre class=""><code class="language-bash">sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git tar rsync util-linux-user nfs-utils bind-utils -y</code></pre>
-					<h1 class="display-6 mt-5">Activar rpmfusion 🔧</h1>
-					<p>4 - habilitar el repositorio CRB:</p>
-					<pre class=""><code class="language-bash">sudo dnf config-manager --set-enabled crb</code></pre>
-					<p>5 - Importar EPEL y EPEL Next Repository:</p>
-					<pre class=""><code class="language-bash">
+    <div class="container">
+        <div class="row mb-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/pages/linux/">Linux</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Configuraciones iniciales</li>
+                </ol>
+            </nav>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active text-dark" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="nav-tab1" aria-selected="true">Primeros pasos</button>
+                    <button class="nav-link text-dark" id="nav-tab2-tab" data-bs-toggle="tab" data-bs-target="#nav-tab2" type="button" role="tab" aria-controls="nav-tab2" aria-selected="false">SELinux</button>
+                    <button class="nav-link text-dark" id="nav-tab3-tab" data-bs-toggle="tab" data-bs-target="#nav-tab3" type="button" role="tab" aria-controls="nav-tab3" aria-selected="false">Time-Zone</button>
+                    <button class="nav-link text-dark" id="nav-tab4-tab" data-bs-toggle="tab" data-bs-target="#nav-tab4" type="button" role="tab" aria-controls="nav-tab4" aria-selected="false">Banner</button>
+                </div>
+            </nav>
+            <div class="tab-content mt-3" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Repositorios y paquetes escenciales 🔧</h1>
+                    <p>1 - Actualizamos el S.O y sus paquetes:</p>
+                    <pre class=""><code class="language-bash">sudo dnf update && dnf upgrade -y</code></pre>
+                    <p>2 - Agregamos el repositorio EPEL:</p>
+                    <pre class=""><code class="language-bash">sudo dnf install epel-release -y</code></pre>
+                    <p>3 - Instalamos paquetes escenciales:</p>
+                    <pre class=""><code class="language-bash">sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git rsync util-linux-user nfs-utils bind-utils -y</code></pre>
+                    <h1 class="display-6 mt-5">Activar rpmfusion 🔧</h1>
+                    <p>4 - habilitar el repositorio CRB:</p>
+                    <pre class=""><code class="language-bash">sudo dnf config-manager --set-enabled crb</code></pre>
+                    <p>5 - Importar EPEL y EPEL Next Repository:</p>
+                    <pre class=""><code class="language-bash">
 						dnf install \
 							https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \
 							https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm -y
 					</code></pre>
-					<p>6 - Instale RPM Fusion Free:</p>
-					<pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
-					<p>7 - Instale RPM Fusion No Free:</p>
-					<pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
-					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>
-						La documentación oficial de apache se encuentra en:
-						<a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
-					</p>
-				</div>
-				<div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
-					<h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
-					<p>1 - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
-					<pre class=""><code class="language-bash">sudo nano /etc/sysconfig/selinux</code></pre>
-					<p>2 - Modificamos la linea "SELINUX="</p>
-					<p>2.1 - Modo enforcing, SELinux aplica las políticas de seguridad activamente. Cualquier acción no permitida por las políticas será bloqueada y registrada en los logs.</p>
-					<pre class=""><code class="language-bash">SELINUX=enforcing</code></pre>
-					<p>2.2 - Modo permissive, SELinux no bloquea acciones, pero registra todas las violaciones de políticas en los logs. Es útil para depurar problemas sin afectar al sistema.</p>
-					<pre class=""><code class="language-bash">SELINUX=permissive</code></pre>
-					<p>2.3 - Modo disabled, SELinux está completamente desactivado. No se aplican políticas ni se generan logs.</p>
-					<pre class=""><code class="language-bash">SELINUX=disabled</code></pre>
-					<p>3 - Reiniciamos el sistema:</p>
-					<pre class=""><code class="language-bash">sudo reboot</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
-					<h1 class="display-6 mt-5">Documentación ✒️</h1>
-					<p>
-						La documentación oficial de apache se encuentra en:
-						<a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
-					</p>
-				</div>
-				<div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
-					<h1 class="display-6 mt-5">Configurar Zona Horaria 🔧</h1>
-					<p>1 - Para cambiar la hora y la zona horaria ejecutamos el siguiente comando, modificando segun sea el Pais/Estado:</p>
-					<pre class=""><code class="language-bash">sudo timedatectl set-timezone America/Caracas</code></pre>
-					<p>2 - Si desea ennumerar todas las zonas horarias disponibles ejecutamos lo siguiente:</p>
-					<pre class=""><code class="language-bash">sudo timedatectl list-timezones</code></pre>
-					<p>3 - Para sincronizar el tiempo, y habilitarlo ejecutamos::</p>
-					<pre class=""><code class="language-bash">sudo systemctl start chronyd && systemctl enable chronyd && systemctl status chronyd</code></pre>
-					<h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60" /> Debian</h1>
-				</div>
-				<div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab">
-					<h1 class="display-6"><img src="/img/rhel.png" alt="" width="60" /> RHEL</h1>
-					<h1 class="display-6 mt-5">Configurar Banner 🔧</h1>
-					<p>1 - Para crear un banner que sea visible al conectarnos por ssh, editamos el siguiente archivo:</p>
-					<pre class=""><code class="language-bash">sudo nano /etc/motd</code></pre>
-					<p>2 - Agregamos cualquier dieño, es este caso dejo esta plantilla:</p>
-					<pre class=""><code class="language-bash">
+                    <p>6 - Instale RPM Fusion Free:</p>
+                    <pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
+                    <p>7 - Instale RPM Fusion No Free:</p>
+                    <pre class=""><code class="language-bash">sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                    <h1 class="display-6 mt-5">Documentación ✒️</h1>
+                    <p>
+                        La documentación oficial de apache se encuentra en:
+                        <a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="nav-tab2" role="tabpanel" aria-labelledby="nav-tab2-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Archivos de Configuración 🔧</h1>
+                    <p>1 - En la etapa de configuración inicial del servidor, es recomendable establecer el SELinux en modo Permissive (para aplicar los cambios, deberá reiniciar su servidor), editamos:</p>
+                    <pre class=""><code class="language-bash">sudo nano /etc/sysconfig/selinux</code></pre>
+                    <p>2 - Modificamos la linea "SELINUX="</p>
+                    <p>2.1 - Modo enforcing, SELinux aplica las políticas de seguridad activamente. Cualquier acción no permitida por las políticas será bloqueada y registrada en los logs.</p>
+                    <pre class=""><code class="language-bash">SELINUX=enforcing</code></pre>
+                    <p>2.2 - Modo permissive, SELinux no bloquea acciones, pero registra todas las violaciones de políticas en los logs. Es útil para depurar problemas sin afectar al sistema.</p>
+                    <pre class=""><code class="language-bash">SELINUX=permissive</code></pre>
+                    <p>2.3 - Modo disabled, SELinux está completamente desactivado. No se aplican políticas ni se generan logs.</p>
+                    <pre class=""><code class="language-bash">SELINUX=disabled</code></pre>
+                    <p>3 - Reiniciamos el sistema:</p>
+                    <pre class=""><code class="language-bash">sudo reboot</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                    <h1 class="display-6 mt-5">Documentación ✒️</h1>
+                    <p>
+                        La documentación oficial de apache se encuentra en:
+                        <a href="https://httpd.apache.org/docs-project/" class="">Apache</a>
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Configurar Zona Horaria 🔧</h1>
+                    <p>1 - Para cambiar la hora y la zona horaria ejecutamos el siguiente comando, modificando segun sea el Pais/Estado:</p>
+                    <pre class=""><code class="language-bash">sudo timedatectl set-timezone America/Caracas</code></pre>
+                    <p>2 - Si desea ennumerar todas las zonas horarias disponibles ejecutamos lo siguiente:</p>
+                    <pre class=""><code class="language-bash">sudo timedatectl list-timezones</code></pre>
+                    <p>3 - Para sincronizar el tiempo, y habilitarlo ejecutamos::</p>
+                    <pre class=""><code class="language-bash">sudo systemctl start chronyd && systemctl enable chronyd && systemctl status chronyd</code></pre>
+                    <h1 class="display-6 mt-5"><img src="/img/debian.png" alt="" width="60"/>
+                        Debian</h1>
+                </div>
+                <div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab">
+                    <h1 class="display-6"><img src="/img/rhel.png" alt="" width="60"/>
+                        RHEL</h1>
+                    <h1 class="display-6 mt-5">Configurar Banner 🔧</h1>
+                    <p>1 - Para crear un banner que sea visible al conectarnos por ssh, editamos el siguiente archivo:</p>
+                    <pre class=""><code class="language-bash">sudo nano /etc/motd</code></pre>
+                    <p>2 - Agregamos cualquier dieño, es este caso dejo esta plantilla:</p>
+                    <pre class=""><code class="language-bash">
                         |----------------------------------------------------------------|
                         | """                     SERVER-APP01-PRO                    "" |
                         | -------------------------------------------------------------- |
