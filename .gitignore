@@ -1,1 +1,41 @@
-node_modules
+# ⛔ Archivos y carpetas generadas por MkDocs
+/site/
+
+# 🐍 Entorno de Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# 📦 Dependencias y entorno virtual
+venv/
+env/
+ENV/
+.venv/
+pip-wheel-metadata/
+
+# 📜 Archivos de logs y bases temporales
+*.log
+*.sqlite
+*.db
+
+# 🔒 Archivos de configuración personal
+*.env
+.env.*
+
+# 💻 Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# ⚙️ Archivos de herramientas
+.mypy_cache/
+pytest_cache/
+.idea/
+.vscode/
+*.code-workspace
+
+# 🐘 GitHub Actions artifacts (si lo usas con workflows)
+#*.workflow.yml
+#.github/*
+#!.github/workflows/
