@@ -3,8 +3,9 @@ repo_name: byc0d3/code
 site_url: https://byc0d3.github.io/code/
 theme:
   name: material
+  language: es
   palette:
-    scheme: slate
+    scheme: default
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
   features:

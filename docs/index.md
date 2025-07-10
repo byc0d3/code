@@ -1,26 +1,51 @@
-# Welcome to MkDocs
+## 🛠️ Bienvenido al Centro Técnico de Configuración
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Este sitio reúne ejemplos de código, scripts reutilizables y guías detalladas para tareas comunes y avanzadas de configuración, desarrollo e integración en entornos empresariales.
 
-## Commands
+---
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## 📁 Contenido del repositorio
 
-## Project layout
+- ⚙️ **Configuración de servidores y servicios**
+  - NGINX, Apache, MariaDB, PostgreSQL, Redis
+  - Docker Compose para entornos modulares
+  - Variables de entorno y secretos seguros
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- 🧾 **Scripts automatizados**
+  - Bash para mantenimiento y monitoreo
+  - Python para orquestación y análisis
 
+- 📚 **Guías paso a paso**
+  - Deploys en producción
+  - Integración con Nextcloud, AdminLTE y CodeIgniter 4
+  - Certificados SSL/TLS y seguridad perimetral
 
-Yo quiero :beers:
+- 🛡️ **Buenas prácticas**
+  - Optimización, escalabilidad, logs y alertas
+  - Compatibilidad entre servicios
 
-| Method      | Description                          |
-| :---------: | :----------------------------------: |
-| `GET`       | :material-check:     Fetch resource  |
-| `PUT`       | :material-check-all: Update resource |
-| `DELETE`    | :material-close:     Delete resource |
+---
+
+## 🔍 ¿Cómo usar este sitio?
+
+- Usa el buscador o el menú lateral para localizar configuraciones específicas.
+- Copia y adapta los scripts según tu entorno.
+- Todas las configuraciones están pensadas para ambientes **REHEL**, y pueden integrarse fácilmente en flujos DevOps.
+
+---
+
+## 📦 Actualizaciones
+
+Este sitio se actualiza constantemente con nuevos ejemplos y mejoras basadas en necesidades reales de operación.
+
+> _Tu equipo no tiene que reinventar la rueda. Aquí está la caja de herramientas lista para usar._
+
+---
+
+## 🤝 Contribuye o reporta mejoras
+
+Si encuentras una optimización o nueva necesidad, ¡puedes sugerir cambios desde el mismo repositorio!
+
+---
+
+**Configuración ágil. Integración sólida. Código listo para producción.**
