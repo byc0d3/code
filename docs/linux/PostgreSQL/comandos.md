@@ -9,23 +9,23 @@
 2. Activa el servicio:
 
     ```{.py .copy linenums="1" hl_lines="2"}
-    sudo systemctl enable mariadb
+    sudo systemctl enable postgresql
     ```
 
 3. Inicia el servicio:
 
     ```{.py .copy linenums="1" hl_lines="2"}
-    sudo systemctl start mariadb
+    sudo systemctl start postgresql
     ```
 
 4. Reinicia el servicio:
 
     ```{.py .copy linenums="1" hl_lines="2"}
-    sudo systemctl restart mariadb
+    sudo systemctl restart postgresql
     ```
 
 5. Detiene el servicio:
 
     ```{.py .copy linenums="1" hl_lines="2"}
-    sudo systemctl stop mariadb
+    sudo systemctl stop postgresql
     ```

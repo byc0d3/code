@@ -1,1 +1,1 @@
-## ⚙️ Configuraciones basicas del servicio de MariaDB
+## ⚙️ Configuraciones basicas del servicio de PostgreSQL

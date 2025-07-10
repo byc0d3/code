@@ -5,7 +5,7 @@ theme:
   name: material
   language: es
   palette:
-    scheme: default
+    scheme: slate
   logo: assets/favicon.ico
   favicon: assets/favicon.ico
   features:
