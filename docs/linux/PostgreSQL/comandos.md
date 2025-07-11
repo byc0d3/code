@@ -1,5 +1,8 @@
 ## 🔧 Comandos basicos para el manejo del servicio de MariaDB
 
+:fontawesome-brands-redhat: **redhat**
+
+
 1. Ver version:
 
     ```{.py .copy linenums="1" hl_lines="2"}

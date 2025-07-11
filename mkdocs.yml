@@ -6,7 +6,7 @@ theme:
   language: es
   palette:
     scheme: slate
-  logo: assets/favicon.ico
+  logo: assets/debian.svg
   favicon: assets/favicon.ico
   features:
     - navigation.footer
