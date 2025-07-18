@@ -1,0 +1,5 @@
+title: PostgreSQL
+nav:
+  - Instalación: instalacion.md
+  - Configuración: configuraciones.md
+  - comandos: comandos.md

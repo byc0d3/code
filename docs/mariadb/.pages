@@ -1,0 +1,6 @@
+title: MariaDB
+nav:
+  - Instalación: instalacion.md
+  - Configuración: configuracion.md
+  - comandos: comandos.md
+  - querys: querys.md
