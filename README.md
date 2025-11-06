@@ -6,4 +6,8 @@
 
 3. pip install mkdocs-material mkdocs-awesome-pages-plugin
 
-4. mkdocs new .
+4. mkdocs serve --livereload
+
+## Para proyecto nuevo
+
+5. mkdocs new .
