@@ -31,7 +31,7 @@
     Utilidades clave para administración, diagnóstico y desarrollo:
 
     ```{.bash .copy linenums="1"}
-    sudo dnf install dnf-utils nano tree curl wget htop traceroute iproute telnet nmap tcpdump iputils unzip tar git rsync util-linux-user nfs-utils bind-utils -y
+    sudo dnf install dnf-utils nano tree curl wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar git rsync util-linux-user nfs-utils bind-utils -y
     ```
 
 5. **Nombre del host**

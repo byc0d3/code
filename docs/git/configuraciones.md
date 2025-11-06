@@ -40,6 +40,7 @@
 
     Agregar la llave privada a Git:
 
+    ```{.bash .copy linenums="1"}
     ssh-add ~/.ssh/nombre-de-la-llave
     ```
 
@@ -47,17 +48,17 @@
 
     Creramos un archivo de configuracion con nuestra llave para q se identifique contra github:
 
-    ```
+    ```{.bash .copy linenums="1"}
     nano ~/.ssh/config
     ```
 
     Con el contenido:
 
-    ```
+    ```{.bash .copy linenums="1"}
     Host github.com
     HostName github.com
     User git
-    IdentityFile ~/.ssh/jpineda-pc-home
+    IdentityFile ~/.ssh/nombre-de-la-llave
     IdentitiesOnly yes
     ```
 
@@ -65,5 +66,6 @@
 
     Para copiar el contenido de nuestra llave SSH pública:
 
+    ```{.bash .copy linenums="1"}
     nano ~/.ssh/nombre-de-la-llave.pub
     ```
