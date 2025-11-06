@@ -62,7 +62,13 @@
     IdentitiesOnly yes
     ```
 
-6. **Copiar llave a github**
+6. **Verifica conexión SSH con GitHub**
+
+    ```{.bash .copy linenums="1"}
+    ssh -T git@github.com
+    ```
+
+7. **Copiar llave a github**
 
     Para copiar el contenido de nuestra llave SSH pública:
 
