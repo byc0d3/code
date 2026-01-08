@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://byc0d3.github.io/code/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/Templates/plantilla/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/Terminal/ohmyzsh/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/git/configuraciones/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/git/instalacion/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/servidores/configuraciones/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/servidores/instalacion/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+    <url>
+         <loc>https://byc0d3.github.io/code/ssh/instalacion/</loc>
+         <lastmod>2026-01-08</lastmod>
+    </url>
+</urlset>
