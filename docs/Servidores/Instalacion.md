@@ -50,34 +50,34 @@ title: Instalacion
 
 4. **History (Universal para Bash y Zsh)**
 
-    ### Para Bash
+    Para Bash
 
     ```{.bash .copy linenums="1"}
     echo "export HISTTIMEFORMAT='%d-%m-%Y %H:%M:%S '" >> ~/.bashrc
     ```
 
-    ### Ejecuta:
+    Ejecuta:
 
     ```{.bash .copy linenums="1"}
     source ~/.bashrc
     ```
 
-    ### Para Zsh
+    Para Zsh
 
-    ### Edita el archivo zshrc
+    Edita el archivo zshrc
 
     ```{.bash .copy linenums="1"}
     nano ~/.zshrc
     ```
 
-    ### Agrega:
+    Agrega:
 
     ```{.bash .copy linenums="1"}
     export HIST_STAMP="dd.mm.yyyy"
     alias history='fc -El 1'
     ```
 
-    ### Ejecuta:
+    Ejecuta:
 
     ```{.bash .copy linenums="1"}
     source ~/.zshrc
