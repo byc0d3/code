@@ -15,17 +15,14 @@ theme:
 
 plugins:
   - search
-  - awesome-pages
 
 markdown_extensions:
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      use_pygments: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -34,7 +31,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - tables
-
+extra_css:
+  - assets/styles.css
 extra:
   generator: false
   social:
@@ -43,4 +41,4 @@ extra:
     - icon: material/linkedin
       link: https://linkedin.com/in/willettjames
 
-copyright: Copyright &copy; 2025 byc0d3
+copyright: Copyright &copy; 2026 byc0d3
