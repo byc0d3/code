@@ -1,11 +1,15 @@
-# 🚀 Permisos
+---
+title: Permisos
+---
+
+# 🚀 Apache
 
 ## 🔧 Dueño y permisos base
 
 1. **Aplicamos 775 a directorios y 664 a archivos para mayor seguridad**
 
     ```{.bash .copy linenums="1"}
-    sudo chown -R usuario:nginx /var/www
+    sudo chown -R usuario:apache /var/www
     find /var/www -type d -exec sudo chmod 775 {} +
     find /var/www -type f -exec sudo chmod 664 {} +
     ```
@@ -41,7 +45,7 @@
     UMask=0002
     ```
 
-4. **Activar herencia de grupo (SGID) en directorios, Esto hace que archivos nuevos hereden el grupo 'nginx'**
+4. **Activar herencia de grupo (SGID) en directorios, Esto hace que archivos nuevos hereden el grupo 'apache'**
 
     ```{.bash .copy linenums="1"}
 	find /var/www -type d -exec sudo chmod g+s {} +
@@ -50,12 +54,12 @@
 5. **ACLs para herencia persistente (El "seguro de vida" de permisos)**
 
     ```{.bash .copy linenums="1"}
-    sudo setfacl -Rdm u:usuario:rwx,g:nginx:rwx /var/www
-    sudo setfacl -Rm u:usuario:rwx,g:nginx:rwx /var/www
+    sudo setfacl -Rdm u:usuario:rwx,g:apache:rwx /var/www
+    sudo setfacl -Rm u:usuario:rwx,g:apache:rwx /var/www
     ```
 
 6. **Reiniciar servicios**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl daemon-reload && sudo systemctl restart php-fpm && sudo systemctl restart nginx
+	sudo systemctl daemon-reload && sudo systemctl restart php-fpm && sudo systemctl restart apache
     ```

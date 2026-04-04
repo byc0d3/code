@@ -1,4 +1,8 @@
-# 🚀 NGINX
+---
+title: Instalación
+---
+
+# 🚀 Nginx
 
 ## 📦 Instalación
 

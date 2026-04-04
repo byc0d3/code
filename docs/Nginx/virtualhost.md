@@ -1,4 +1,8 @@
-# 🚀 NGINX
+---
+title: Virtualhost
+---
+
+# 🚀 Nginx
 
 ## ⚙️ Virtualhost
 

@@ -1,3 +1,7 @@
+---
+title: Instalación
+---
+
 # 🚀 MariaDB
 
 ## 📦 Instalación
