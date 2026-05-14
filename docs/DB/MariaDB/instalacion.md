@@ -74,7 +74,7 @@ title: Instalación
     Dentro de la consola SQL:
 
     ```{.bash .copy linenums="1"}
-    CREATE USER 'admindb'@'%' IDENTIFIED BY '3m7qxhdd';
+    CREATE USER 'admindb'@'%' IDENTIFIED BY 'passwd';
     GRANT ALL PRIVILEGES ON *.* TO 'admindb'@'%' WITH GRANT OPTION;
     FLUSH PRIVILEGES;
     EXIT;

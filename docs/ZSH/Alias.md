@@ -13,7 +13,7 @@ title: Alias
     ```
 2. **Agregamos los alias**
 
-    ```
+    ```{.bash .copy linenums="1"}
     alias cat='bat'
     alias ll='lsd -lh --group-dirs=first'
     alias la='lsd -a --group-dirs=first'

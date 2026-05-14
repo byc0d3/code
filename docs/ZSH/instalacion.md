@@ -9,7 +9,7 @@ title: Instalacion
 1. **Instalamos zsh**
 
     ```{.bash .copy linenums="1"}
-    sudo dnf install zsh bat cat -y
+    sudo dnf install zsh bat lsd -y
     ```
 2. **Instalamos oh my zsh**
 
@@ -88,7 +88,7 @@ title: Instalacion
     ```
     Agregamos los plugin
 
-    ```
+    ```{.bash .copy linenums="1"}
     plugins=(
         sudo
         git

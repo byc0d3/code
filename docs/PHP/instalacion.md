@@ -15,6 +15,13 @@ title: Instalación
 
 2. **Instalar el repositorio de Remi (Asegúrate de que sea la versión de tu OS, 9 o 10)**
 
+    Rocky 9
+
+    ```{.bash .copy linenums="1"}
+    sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
+    ```
+    Rocky 10
+
     ```{.bash .copy linenums="1"}
     sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-10.rpm -y
     ```
