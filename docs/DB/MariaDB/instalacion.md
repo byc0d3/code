@@ -8,10 +8,10 @@ title: Instalación
 
 1. **Configurar el Repositorio Oficial**
 
-    Prepara el sistema para descargar la versión específica 11.8.6.
+    Prepara el sistema para descargar la versión específica 12.3.2
 
     ```{.bash .copy linenums="1"}
-    curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=11.8.6
+    curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=12.3.2
     ```
 
 2. **Instalación de Paquetes**
