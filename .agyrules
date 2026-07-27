@@ -1,0 +1,14 @@
+# Reglas del Proyecto (MkDocs + Material for MkDocs)
+
+- **Tecnología Principal**: Este proyecto utiliza **MkDocs** con el tema **Material for MkDocs**.
+- **Formato de Archivos**: Todos los documentos de documentación deben ser escritos en formato **Markdown** (`.md`).
+- **Metadatos (Frontmatter)**: Utiliza siempre Frontmatter YAML al inicio de los archivos para definir al menos el `title` (ej. `title: Título de la página`).
+- **Encabezados**:
+  - Utiliza un único H1 (`#`) por página, preferiblemente acompañado de un emoji (ej. `# 🚀 Título`).
+  - Utiliza H2 (`##`) para las secciones principales, también con emojis (ej. `## 📦 Instalación`).
+- **Bloques de Código**:
+  - Para comandos de terminal o código, usa bloques de código resaltados con la sintaxis de Material for MkDocs.
+  - Ejemplo para bash con botón de copiar y números de línea: ```{.bash .copy linenums="1"}```.
+- **Listas y Pasos**: Utiliza listas numeradas (`1.`, `2.`, etc.) para instrucciones paso a paso o flujos de trabajo.
+- **Admonitions (Alertas)**: Aprovecha las admonitions nativas de Material for MkDocs (`!!! note`, `!!! warning`, `!!! tip`, etc.) para resaltar notas importantes o advertencias.
+- **Estilo General**: Mantén un tono técnico, claro y directo. Utiliza negritas para resaltar palabras clave, nombres de archivos y comandos.
