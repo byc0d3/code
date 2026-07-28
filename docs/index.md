@@ -1,9 +1,14 @@
-# Bienvenidos a C0d3
+---
+title: Bienvenidos a C0d3
+---
 
-Códigos de ayuda, ejemplos y otros
+# 🚀 Bienvenidos a C0d3
 
-## Temas
+!!! note "Propósito"
+    Códigos de ayuda, ejemplos y otros recursos para el equipo.
 
-* `Linux` - Instalación, configuración, soporte.
-* `Server` - Instalación, configuración, seguridad, respaldo..
-* `Programación` - Configuraciones, códigos, ejemplos, bases de datos, etc..
+## 📚 Temas
+
+1. **Linux** - Instalación, configuración, soporte.
+2. **Server** - Instalación, configuración, seguridad, respaldo.
+3. **Programación** - Configuraciones, códigos, ejemplos, bases de datos, etc.

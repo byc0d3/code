@@ -4,9 +4,12 @@ title: Composer
 
 # 🚀 PHP
 
-## 📦 Instalacion
+## 📦 Instalación
 
 1. **Instalación de Composer**
+
+    !!! tip "Recomendación"
+        Asegúrate de ejecutar estos comandos con los privilegios adecuados o como usuario con permisos a **/usr/local/bin**.
 
     ```{.bash .copy linenums="1"}
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -17,7 +20,7 @@ title: Composer
 
 ## 🔧 Comandos
 
-1. **Ver version de Composer**
+1. **Ver versión de Composer**
 
     ```{.bash .copy linenums="1"}
     composer -V

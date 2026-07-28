@@ -8,7 +8,8 @@ title: Instalación
 
 1. **Configurar el Repositorio Oficial**
 
-    Prepara el sistema para descargar la versión específica 12.3.2
+    !!! note "Nota"
+        Prepara el sistema para descargar la versión específica `12.3.2`
 
     ```{.bash .copy linenums="1"}
     curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version=12.3.2
@@ -28,15 +29,16 @@ title: Instalación
 
 ## ⚙️ Configuraciones
 
-4. **Asegurar la Instalación**
+1. **Asegurar la Instalación**
 
-    Ejecuta el asistente para borrar usuarios anónimos y definir la contraseña de root:
+    !!! tip "Recomendación"
+        Ejecuta el asistente para borrar usuarios anónimos y definir la contraseña de `root`:
 
     ```{.bash .copy linenums="1"}
     sudo mariadb-secure-installation
     ```
 
-5. **Configuración del Servidor (Red y UTF8)**
+2. **Configuración del Servidor (Red y UTF8)**
 
     Edita el archivo de configuración:
 
@@ -53,16 +55,17 @@ title: Instalación
     collation-server=utf8mb4_unicode_ci
     ```
 
-6. **Configuración del Firewall Interno**
+3. **Configuración del Firewall Interno**
 
-    Si tu sistema tiene firewalld, este comando abrirá el puerto 3306 permanentemente:
+    !!! tip "Información"
+        Si tu sistema tiene `firewalld`, este comando abrirá el puerto `3306` permanentemente:
 
     ```{.bash .copy linenums="1"}
     sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
     sudo firewall-cmd --reload
     ```
 
-7. **Reiniciar MariaDB y Crear Usuario**
+4. **Reiniciar MariaDB y Crear Usuario**
 
     Aplica los cambios de configuración y accede para crear tu administrador:
 
@@ -82,26 +85,35 @@ title: Instalación
 
 ## 🔧 Comandos
 
-8. **Estatus MariaDB**
+1. **Estatus MariaDB**
 
     ```{.bash .copy linenums="1"}
-    systemctl status mariadb
+    sudo systemctl status mariadb
     ```
 
-9. **Iniciar MariaDB**
+2. **Iniciar MariaDB**
 
     ```{.bash .copy linenums="1"}
-    systemctl start mariadb
+    sudo systemctl start mariadb
     ```
 
-10. **Detener nginx**
+3. **Detener MariaDB**
 
     ```{.bash .copy linenums="1"}
-    sudo systemctl stop nginx
+    sudo systemctl stop mariadb
     ```
 
-11. **Recargar configuracion MariaDB**
+4. **Recargar configuracion MariaDB**
 
     ```{.bash .copy linenums="1"}
-    systemctl reload mariadb
+    sudo systemctl reload mariadb
+    ```
+
+5. **Conexión Remota (admindb)**
+
+    !!! tip "Cliente SQL"
+        Recuerda cambiar `IP_DEL_SERVIDOR` por la dirección real de tu servidor.
+
+    ```{.bash .copy linenums="1"}
+    mariadb -u admindb -p -h IP_DEL_SERVIDOR
     ```

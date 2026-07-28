@@ -6,21 +6,27 @@ title: Instalación
 
 ## 🛠️ Preparación del Sistema
 
-1. **Activar CRB y EPEL (fundamentales para dependencias)**
+1. **Activar CRB y EPEL**
+    
+    !!! note "Importante"
+        Estos repositorios son fundamentales para resolver las dependencias.
 
     ```{.bash .copy linenums="1"}
     sudo dnf config-manager --set-enabled crb
     sudo dnf install epel-release -y
     ```
 
-2. **Instalar el repositorio de Remi (Asegúrate de que sea la versión de tu OS, 9 o 10)**
+2. **Instalar el repositorio de Remi**
 
-    Rocky 9
+    !!! warning "Versión de SO"
+        Asegúrate de que la versión del repositorio sea la correspondiente a tu sistema operativo (Rocky 9 o 10).
+
+    Rocky 9:
 
     ```{.bash .copy linenums="1"}
     sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
     ```
-    Rocky 10
+    Rocky 10:
 
     ```{.bash .copy linenums="1"}
     sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-10.rpm -y
@@ -34,7 +40,7 @@ title: Instalación
     sudo dnf module enable php:remi-8.5 -y
     ```
 
-## 📦 Instalacion
+## 📦 Instalación
 
 1. **Instalación de PHP y Extensiones**
 
@@ -52,18 +58,17 @@ title: Instalación
     php-opcache \
     php-zip \
     php-bcmath \
-    php-soap \
-    php-opcache
+    php-soap
     ```
 
 ## ⚙️ Configuraciones
 
-1. **Editamos php-fpm para que trabaje con NGINX**
+1. **Configurar php-fpm para trabajar con NGINX**
 
     ```{.bash .copy linenums="1"}
     sudo nano /etc/php-fpm.d/www.conf
     ```
-2. **Descomentamos y modificamos estas lineas**
+2. **Descomentamos y modificamos estas líneas**
 
     ```{.bash .copy linenums="1"}
     user = nginx
@@ -75,13 +80,13 @@ title: Instalación
 
 ## 🔧 Comandos
 
-1. **Probamos la configuracion**
+1. **Probamos la configuración de Nginx**
 
     ```{.bash .copy linenums="1"}
     sudo nginx -t
     ```
 
-2. **Reiniciamos lo servicios**
+2. **Reiniciamos los servicios**
 
     ```{.bash .copy linenums="1"}
     sudo systemctl restart nginx php-fpm

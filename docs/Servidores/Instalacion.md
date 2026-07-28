@@ -1,12 +1,15 @@
 ---
-title: Instalacion
+title: Instalación
 ---
 
 # 🚀 Rocky Linux
 
 ## 🛠️ Preparación del Sistema
 
-1. **Instalamos EPEL y habilitamos CRB (necesario para dependencias de desarrollo)**
+1. **Instalamos EPEL y habilitamos CRB**
+
+    !!! note "Dependencias"
+        Esto es necesario para instalar las dependencias de desarrollo.
 
     ```{.bash .copy linenums="1"}
     sudo dnf install epel-release -y
@@ -21,7 +24,7 @@ title: Instalacion
 
 ## 📦 Instalación
 
-1. **Instalamos esenciales**
+1. **Instalamos herramientas esenciales**
 
     ```{.bash .copy linenums="1"}
     sudo dnf install dnf-utils nano vim tree wget btop traceroute iproute telnet nmap tcpdump iputils unzip tar rsync util-linux-user nfs-utils bind-utils chrony -y
@@ -50,7 +53,7 @@ title: Instalacion
 
 4. **History (Universal para Bash y Zsh)**
 
-    Para Bash
+    Para **Bash**:
 
     ```{.bash .copy linenums="1"}
     echo "export HISTTIMEFORMAT='%d-%m-%Y %H:%M:%S '" >> ~/.bashrc
@@ -62,9 +65,9 @@ title: Instalacion
     source ~/.bashrc
     ```
 
-    Para Zsh
+    Para **Zsh**:
 
-    Edita el archivo zshrc
+    Edita el archivo **zshrc**:
 
     ```{.bash .copy linenums="1"}
     nano ~/.zshrc
@@ -97,7 +100,10 @@ title: Instalacion
     sudo dnf install --nogpgcheck "https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm" -y
     ```
 
-7. **reboot**
+7. **Reboot**
+
+    !!! warning "Reinicio"
+        Asegúrate de haber guardado todo antes de reiniciar el servidor.
 
     ```{.bash .copy linenums="1"}
     sudo reboot

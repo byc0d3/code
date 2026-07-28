@@ -6,15 +6,21 @@ title: Virtualhost
 
 ## ⚙️ Virtualhost
 
-1. **Los virtualhost los creamos en /etc/httpd/config.d**
+1. **Creación de Virtualhosts**
+
+    !!! note "Ubicación"
+        Los virtualhosts los creamos en **/etc/httpd/conf.d**.
 
     ```{.bash .copy linenums="1"}
-    sudo nano dominio.local.conf
+    sudo nano /etc/httpd/conf.d/dominio.local.conf
     ```
 
-2. **Configuramos segun el caso**
+2. **Configuramos según el caso**
 
-	### http
+    !!! note "Atención"
+        Recuerda cambiar `sitio.local` y las rutas por los valores de tu proyecto.
+
+	### 🌐 HTTP
 
     ```{.bash .copy linenums="1"}
     <VirtualHost *:80>
@@ -37,7 +43,7 @@ title: Virtualhost
 	</VirtualHost>
     ```
 
-	### https
+	### 🔒 HTTPS
 
     ```{.bash .copy linenums="1"}
 	<VirtualHost *:443>

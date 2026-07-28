@@ -6,7 +6,7 @@ title: Instalación
 
 ## 📦 Instalación
 
-1. **Instalamos nginx**
+1. **Instalamos Nginx**
 
     ```{.bash .copy linenums="1"}
     sudo dnf install nginx
@@ -20,15 +20,21 @@ title: Instalación
 
 ## ⚙️ Configuraciones
 
-1. **Los virtualhost los creamos en /etc/nginx/config.d**
+1. **Los virtualhost los creamos en `/etc/nginx/conf.d`**
+
+    !!! note "Nota"
+        Asegúrate de cambiar `dominio.local` por tu nombre de dominio.
 
     ```{.bash .copy linenums="1"}
-    sudo nano dominio.local.conf
+    sudo nano /etc/nginx/conf.d/dominio.local.conf
     ```
 
 ## 🔧 Comandos
 
-1. **Validar configuracion de nginx**
+1. **Validar configuración de nginx**
+
+    !!! tip "Buena Práctica"
+        Siempre valida la configuración antes de recargar el servicio.
 
     ```{.bash .copy linenums="1"}
     sudo nginx -t
@@ -40,7 +46,7 @@ title: Instalación
 	sudo systemctl restart nginx
     ```
 
-3. **Recargar configuracion nginx**
+3. **Recargar configuración nginx**
 
     ```{.bash .copy linenums="1"}
 	sudo systemctl reload nginx

@@ -12,3 +12,4 @@
 - **Listas y Pasos**: Utiliza listas numeradas (`1.`, `2.`, etc.) para instrucciones paso a paso o flujos de trabajo.
 - **Admonitions (Alertas)**: Aprovecha las admonitions nativas de Material for MkDocs (`!!! note`, `!!! warning`, `!!! tip`, etc.) para resaltar notas importantes o advertencias.
 - **Estilo General**: Mantén un tono técnico, claro y directo. Utiliza negritas para resaltar palabras clave, nombres de archivos y comandos.
+

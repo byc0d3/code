@@ -1,5 +1,5 @@
 ---
-title: Automatización
+title: Scripts de Automatización
 ---
 
 # 🚀 Suite de Automatización para server en Rocky Linux

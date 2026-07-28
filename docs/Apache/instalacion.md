@@ -20,27 +20,39 @@ title: Instalación
 
 ## ⚙️ Configuraciones
 
-1. **Los virtualhost los creamos en /etc/httpd/config.d**
+1. **Los virtualhost los creamos en `/etc/httpd/conf.d`**
+
+    !!! note "Nota"
+        Asegúrate de cambiar `dominio.local` por tu nombre de dominio.
 
     ```{.bash .copy linenums="1"}
-    sudo nano dominio.local.conf
+    sudo nano /etc/httpd/conf.d/dominio.local.conf
     ```
 
 ## 🔧 Comandos
 
-1. **Reiniciar httpd**
+1. **Validar configuración de httpd**
+
+    !!! tip "Buena Práctica"
+        Siempre valida la configuración antes de recargar el servicio.
+
+    ```{.bash .copy linenums="1"}
+    sudo httpd -t
+    ```
+
+2. **Reiniciar httpd**
 
     ```{.bash .copy linenums="1"}
 	sudo systemctl restart httpd
     ```
 
-2. **Recargar configuracion httpd**
+3. **Recargar configuracion httpd**
 
     ```{.bash .copy linenums="1"}
 	sudo systemctl reload httpd
     ```
 
-3. **Detener httpd**
+4. **Detener httpd**
 
     ```{.bash .copy linenums="1"}
 	sudo systemctl stop httpd

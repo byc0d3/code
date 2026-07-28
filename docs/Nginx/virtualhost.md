@@ -6,15 +6,21 @@ title: Virtualhost
 
 ## ⚙️ Virtualhost
 
-1. **Los virtualhost los creamos en /etc/nginx/config.d**
+1. **Creación de Virtualhosts**
+    
+    !!! note "Ubicación"
+        Los virtualhosts los creamos en **/etc/nginx/conf.d**.
 
     ```{.bash .copy linenums="1"}
-    sudo nano dominio.local.conf
+    sudo nano /etc/nginx/conf.d/dominio.local.conf
     ```
 
-2. **Configuramos segun el caso**
+2. **Configuramos según el caso**
 
-	### http
+    !!! note "Atención"
+        Recuerda cambiar `dominio.local` y las rutas por los valores de tu proyecto.
+
+    ### 🌐 HTTP
 
     ```{.bash .copy linenums="1"}
     server {
@@ -43,7 +49,7 @@ title: Virtualhost
 	}
     ```
 
-	### https
+    ### 🔒 HTTPS
 
     ```{.bash .copy linenums="1"}
 	server {
@@ -79,7 +85,7 @@ title: Virtualhost
 	}
     ```
 
-	### Proxy
+    ### 🔄 Proxy
 
     ```{.bash .copy linenums="1"}
 	server {
@@ -88,7 +94,7 @@ title: Virtualhost
 		error_log	/var/log/nginx/dominio.com_error.log;
 
 		location / {
-			#La configuración del proxy.
+			# La configuración del proxy.
 			proxy_pass http://10.31.xxx.xxx:80/;
 			proxy_redirect off;
 			proxy_set_header Host $host;
