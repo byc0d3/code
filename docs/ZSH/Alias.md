@@ -21,6 +21,7 @@ title: Alias
     alias lla='lsd -lha --group-dirs=first'
     alias ls='lsd --group-dirs=first'
     alias lst='lsd --tree --group-dirs=first'
+    alias cls='clear'
     gitp() {
         git add .
         git commit -m "${1:-update: $(date +'%d-%m-%Y %H:%M')}"
