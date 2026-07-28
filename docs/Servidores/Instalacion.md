@@ -51,9 +51,9 @@ title: Instalación
     sudo systemctl enable --now chronyd
     ```
 
-4. **History (Universal para Bash y Zsh)**
+4. **Formato de History**
 
-    Para **Bash**:
+    Añade el formato de fecha y hora al historial de comandos en Bash:
 
     ```{.bash .copy linenums="1"}
     echo "export HISTTIMEFORMAT='%d-%m-%Y %H:%M:%S '" >> ~/.bashrc
@@ -63,27 +63,6 @@ title: Instalación
 
     ```{.bash .copy linenums="1"}
     source ~/.bashrc
-    ```
-
-    Para **Zsh**:
-
-    Edita el archivo **zshrc**:
-
-    ```{.bash .copy linenums="1"}
-    nano ~/.zshrc
-    ```
-
-    Agrega:
-
-    ```{.bash .copy linenums="1"}
-    export HIST_STAMP="dd.mm.yyyy"
-    alias history='fc -El 1'
-    ```
-
-    Ejecuta:
-
-    ```{.bash .copy linenums="1"}
-    source ~/.zshrc
     ```
 
 5. **Habilitar servicios NFS**
