@@ -43,17 +43,17 @@ title: Instalación
 2. **Reiniciar nginx**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl restart nginx
+    sudo systemctl restart nginx
     ```
 
 3. **Recargar configuración nginx**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl reload nginx
+    sudo systemctl reload nginx
     ```
 
 4. **Detener nginx**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl stop nginx
+    sudo systemctl stop nginx
     ```

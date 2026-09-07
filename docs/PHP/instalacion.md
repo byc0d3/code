@@ -7,7 +7,7 @@ title: Instalación
 ## 🛠️ Preparación del Sistema
 
 1. **Activar CRB y EPEL**
-    
+
     !!! note "Importante"
         Estos repositorios son fundamentales para resolver las dependencias.
 
@@ -18,18 +18,11 @@ title: Instalación
 
 2. **Instalar el repositorio de Remi**
 
-    !!! warning "Versión de SO"
-        Asegúrate de que la versión del repositorio sea la correspondiente a tu sistema operativo (Rocky 9 o 10).
-
-    Rocky 9:
+    !!! note "Detección automática"
+        Se utiliza `$(rpm -E %rhel)` para detectar automáticamente la versión del sistema (Rocky 9 o 10).
 
     ```{.bash .copy linenums="1"}
-    sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
-    ```
-    Rocky 10:
-
-    ```{.bash .copy linenums="1"}
-    sudo dnf install http://rpms.remirepo.net/enterprise/remi-release-10.rpm -y
+    sudo dnf install -y http://rpms.remirepo.net/enterprise/remi-release-$(rpm -E %rhel).rpm
     ```
 
 3. **Configuración de PHP 8.5**
@@ -68,6 +61,7 @@ title: Instalación
     ```{.bash .copy linenums="1"}
     sudo nano /etc/php-fpm.d/www.conf
     ```
+
 2. **Descomentamos y modificamos estas líneas**
 
     ```{.bash .copy linenums="1"}
@@ -80,13 +74,13 @@ title: Instalación
 
 ## 🔧 Comandos
 
-1. **Probamos la configuración de Nginx**
+1. **Probar la configuración de PHP-FPM**
 
     ```{.bash .copy linenums="1"}
-    sudo nginx -t
+    sudo php-fpm -t
     ```
 
-2. **Reiniciamos los servicios**
+2. **Reiniciar los servicios**
 
     ```{.bash .copy linenums="1"}
     sudo systemctl restart nginx php-fpm

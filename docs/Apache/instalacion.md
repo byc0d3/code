@@ -43,17 +43,17 @@ title: Instalación
 2. **Reiniciar httpd**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl restart httpd
+    sudo systemctl restart httpd
     ```
 
-3. **Recargar configuracion httpd**
+3. **Recargar configuración httpd**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl reload httpd
+    sudo systemctl reload httpd
     ```
 
 4. **Detener httpd**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl stop httpd
+    sudo systemctl stop httpd
     ```

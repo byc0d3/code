@@ -103,7 +103,7 @@ title: Instalación
     sudo systemctl stop mariadb
     ```
 
-4. **Recargar configuracion MariaDB**
+4. **Recargar configuración MariaDB**
 
     ```{.bash .copy linenums="1"}
     sudo systemctl reload mariadb

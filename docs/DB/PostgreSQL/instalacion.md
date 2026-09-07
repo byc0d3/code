@@ -117,7 +117,7 @@ title: Instalación
     sudo systemctl stop postgresql-18
     ```
 
-4. **Recargar configuracion PostgreSQL**
+4. **Recargar configuración PostgreSQL**
 
     ```{.bash .copy linenums="1"}
     sudo systemctl reload postgresql-18

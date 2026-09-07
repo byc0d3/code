@@ -25,14 +25,14 @@ title: Permisos
     BASH
 
     ```{.bash .copy linenums="1"}
-	grep -qxF 'umask 002' ~/.bashrc || echo 'umask 002' >> ~/.bashrc
+    grep -qxF 'umask 002' ~/.bashrc || echo 'umask 002' >> ~/.bashrc
     source ~/.bashrc
     ```
 
     ZSH
 
     ```{.bash .copy linenums="1"}
-	grep -qxF 'umask 002' ~/.zshrc || echo 'umask 002' >> ~/.zshrc
+    grep -qxF 'umask 002' ~/.zshrc || echo 'umask 002' >> ~/.zshrc
     source ~/.zshrc
     ```
 
@@ -41,13 +41,13 @@ title: Permisos
     Editamos el archivo:
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl edit php-fpm
+    sudo systemctl edit php-fpm
     ```
 
     Y agregamos:
 
     ```{.bash .copy linenums="1"}
-	[Service]
+    [Service]
     UMask=0002
     ```
 
@@ -57,7 +57,7 @@ title: Permisos
         Esto hace que los archivos nuevos hereden el grupo `nginx`.
 
     ```{.bash .copy linenums="1"}
-	find /var/www -type d -exec sudo chmod g+s {} +
+    find /var/www -type d -exec sudo chmod g+s {} +
     ```
 
 5. **ACLs para herencia persistente**
@@ -73,5 +73,5 @@ title: Permisos
 6. **Reiniciar servicios**
 
     ```{.bash .copy linenums="1"}
-	sudo systemctl daemon-reload && sudo systemctl restart php-fpm && sudo systemctl restart nginx
+    sudo systemctl daemon-reload && sudo systemctl restart php-fpm && sudo systemctl restart nginx
     ```

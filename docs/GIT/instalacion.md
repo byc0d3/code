@@ -59,10 +59,13 @@ title: Instalación
 
     ```{.bash .copy linenums="1"}
     Host github.com
-    HostName github.com
+    Hostname ssh.github.com
+    Port 443
     User git
     IdentityFile ~/.ssh/nombre-llave
     IdentitiesOnly yes
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
     ```
 
 ## 🔧 Comandos
